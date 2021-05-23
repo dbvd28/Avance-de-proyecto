@@ -49,9 +49,24 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         JD_CrearCampos = new javax.swing.JDialog();
+        jP_crear_campos = new javax.swing.JPanel();
+        btn_crear_campos = new javax.swing.JButton();
+        btn_cancelar_crear_campos = new javax.swing.JButton();
+        btn_cerrar_crear_campos = new javax.swing.JButton();
         JD_ModificarCampos = new javax.swing.JDialog();
+        jP_modificar_campos = new javax.swing.JPanel();
+        btn_cerrar_modificar_campos = new javax.swing.JButton();
+        btn_cancelar_modificar_campos = new javax.swing.JButton();
+        btn_listar_campos_desde_modificar = new javax.swing.JButton();
         JD_ListarCampos = new javax.swing.JDialog();
+        jP_listar_campos = new javax.swing.JPanel();
+        btn_actualizar_listar_campos = new javax.swing.JButton();
+        btn_cerrar_listar_campos = new javax.swing.JButton();
         JD_BorrarCampos = new javax.swing.JDialog();
+        jP_borrar_campos = new javax.swing.JPanel();
+        btn_borrar_campos = new javax.swing.JButton();
+        btn_cancelar_borrar_campos = new javax.swing.JButton();
+        btn_cerrar_borrar_campos = new javax.swing.JButton();
         jb_nuevoarchvo = new java.awt.Button();
         jb_abrrarchivo = new java.awt.Button();
         jb_salir = new java.awt.Button();
@@ -176,48 +191,175 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                     .addContainerGap(141, Short.MAX_VALUE)))
         );
 
+        jP_crear_campos.setBackground(new java.awt.Color(0, 204, 255));
+
+        btn_crear_campos.setText("Crear Campos");
+
+        btn_cancelar_crear_campos.setText("Cancelar");
+
+        btn_cerrar_crear_campos.setText("Cerrar");
+
+        javax.swing.GroupLayout jP_crear_camposLayout = new javax.swing.GroupLayout(jP_crear_campos);
+        jP_crear_campos.setLayout(jP_crear_camposLayout);
+        jP_crear_camposLayout.setHorizontalGroup(
+            jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_crear_camposLayout.createSequentialGroup()
+                .addContainerGap(99, Short.MAX_VALUE)
+                .addComponent(btn_cerrar_crear_campos)
+                .addGap(36, 36, 36)
+                .addComponent(btn_cancelar_crear_campos)
+                .addGap(18, 18, 18)
+                .addComponent(btn_crear_campos)
+                .addGap(67, 67, 67))
+        );
+        jP_crear_camposLayout.setVerticalGroup(
+            jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_crear_camposLayout.createSequentialGroup()
+                .addContainerGap(277, Short.MAX_VALUE)
+                .addGroup(jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_crear_campos)
+                    .addComponent(btn_cancelar_crear_campos)
+                    .addComponent(btn_cerrar_crear_campos))
+                .addGap(56, 56, 56))
+        );
+
         javax.swing.GroupLayout JD_CrearCamposLayout = new javax.swing.GroupLayout(JD_CrearCampos.getContentPane());
         JD_CrearCampos.getContentPane().setLayout(JD_CrearCamposLayout);
         JD_CrearCamposLayout.setHorizontalGroup(
             JD_CrearCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jP_crear_campos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JD_CrearCamposLayout.setVerticalGroup(
             JD_CrearCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jP_crear_campos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jP_modificar_campos.setBackground(new java.awt.Color(0, 204, 255));
+
+        btn_cerrar_modificar_campos.setText("Cerrar");
+
+        btn_cancelar_modificar_campos.setText("Cancelar");
+
+        btn_listar_campos_desde_modificar.setText("Listar Campos");
+
+        javax.swing.GroupLayout jP_modificar_camposLayout = new javax.swing.GroupLayout(jP_modificar_campos);
+        jP_modificar_campos.setLayout(jP_modificar_camposLayout);
+        jP_modificar_camposLayout.setHorizontalGroup(
+            jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_modificar_camposLayout.createSequentialGroup()
+                .addContainerGap(108, Short.MAX_VALUE)
+                .addComponent(btn_cancelar_modificar_campos)
+                .addGap(27, 27, 27)
+                .addComponent(btn_cerrar_modificar_campos)
+                .addGap(42, 42, 42)
+                .addComponent(btn_listar_campos_desde_modificar)
+                .addGap(44, 44, 44))
+        );
+        jP_modificar_camposLayout.setVerticalGroup(
+            jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_modificar_camposLayout.createSequentialGroup()
+                .addContainerGap(260, Short.MAX_VALUE)
+                .addGroup(jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_cerrar_modificar_campos)
+                    .addComponent(btn_cancelar_modificar_campos)
+                    .addComponent(btn_listar_campos_desde_modificar))
+                .addGap(73, 73, 73))
         );
 
         javax.swing.GroupLayout JD_ModificarCamposLayout = new javax.swing.GroupLayout(JD_ModificarCampos.getContentPane());
         JD_ModificarCampos.getContentPane().setLayout(JD_ModificarCamposLayout);
         JD_ModificarCamposLayout.setHorizontalGroup(
             JD_ModificarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jP_modificar_campos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JD_ModificarCamposLayout.setVerticalGroup(
             JD_ModificarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(JD_ModificarCamposLayout.createSequentialGroup()
+                .addComponent(jP_modificar_campos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jP_listar_campos.setBackground(new java.awt.Color(0, 204, 255));
+
+        btn_actualizar_listar_campos.setText("Actualizar");
+
+        btn_cerrar_listar_campos.setText("Cerrar");
+
+        javax.swing.GroupLayout jP_listar_camposLayout = new javax.swing.GroupLayout(jP_listar_campos);
+        jP_listar_campos.setLayout(jP_listar_camposLayout);
+        jP_listar_camposLayout.setHorizontalGroup(
+            jP_listar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_listar_camposLayout.createSequentialGroup()
+                .addGap(127, 127, 127)
+                .addComponent(btn_cerrar_listar_campos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addComponent(btn_actualizar_listar_campos)
+                .addGap(74, 74, 74))
+        );
+        jP_listar_camposLayout.setVerticalGroup(
+            jP_listar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_listar_camposLayout.createSequentialGroup()
+                .addContainerGap(295, Short.MAX_VALUE)
+                .addGroup(jP_listar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_actualizar_listar_campos)
+                    .addComponent(btn_cerrar_listar_campos))
+                .addGap(60, 60, 60))
         );
 
         javax.swing.GroupLayout JD_ListarCamposLayout = new javax.swing.GroupLayout(JD_ListarCampos.getContentPane());
         JD_ListarCampos.getContentPane().setLayout(JD_ListarCamposLayout);
         JD_ListarCamposLayout.setHorizontalGroup(
             JD_ListarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jP_listar_campos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JD_ListarCamposLayout.setVerticalGroup(
             JD_ListarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jP_listar_campos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jP_borrar_campos.setBackground(new java.awt.Color(0, 204, 255));
+
+        btn_borrar_campos.setText("Borrar Campo(s)");
+
+        btn_cancelar_borrar_campos.setText("Cancelar");
+
+        btn_cerrar_borrar_campos.setText("Cerrar");
+
+        javax.swing.GroupLayout jP_borrar_camposLayout = new javax.swing.GroupLayout(jP_borrar_campos);
+        jP_borrar_campos.setLayout(jP_borrar_camposLayout);
+        jP_borrar_camposLayout.setHorizontalGroup(
+            jP_borrar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_borrar_camposLayout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(btn_cancelar_borrar_campos)
+                .addGap(39, 39, 39)
+                .addComponent(btn_cerrar_borrar_campos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(btn_borrar_campos)
+                .addGap(52, 52, 52))
+        );
+        jP_borrar_camposLayout.setVerticalGroup(
+            jP_borrar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_borrar_camposLayout.createSequentialGroup()
+                .addContainerGap(309, Short.MAX_VALUE)
+                .addGroup(jP_borrar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_borrar_campos)
+                    .addComponent(btn_cancelar_borrar_campos)
+                    .addComponent(btn_cerrar_borrar_campos))
+                .addGap(35, 35, 35))
         );
 
         javax.swing.GroupLayout JD_BorrarCamposLayout = new javax.swing.GroupLayout(JD_BorrarCampos.getContentPane());
         JD_BorrarCampos.getContentPane().setLayout(JD_BorrarCamposLayout);
         JD_BorrarCamposLayout.setHorizontalGroup(
             JD_BorrarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(JD_BorrarCamposLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jP_borrar_campos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JD_BorrarCamposLayout.setVerticalGroup(
             JD_BorrarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jP_borrar_campos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -492,7 +634,22 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JDialog JD_CrearCampos;
     private javax.swing.JDialog JD_ListarCampos;
     private javax.swing.JDialog JD_ModificarCampos;
+    private javax.swing.JButton btn_actualizar_listar_campos;
+    private javax.swing.JButton btn_borrar_campos;
+    private javax.swing.JButton btn_cancelar_borrar_campos;
+    private javax.swing.JButton btn_cancelar_crear_campos;
+    private javax.swing.JButton btn_cancelar_modificar_campos;
+    private javax.swing.JButton btn_cerrar_borrar_campos;
+    private javax.swing.JButton btn_cerrar_crear_campos;
+    private javax.swing.JButton btn_cerrar_listar_campos;
+    private javax.swing.JButton btn_cerrar_modificar_campos;
+    private javax.swing.JButton btn_crear_campos;
+    private javax.swing.JButton btn_listar_campos_desde_modificar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jP_borrar_campos;
+    private javax.swing.JPanel jP_crear_campos;
+    private javax.swing.JPanel jP_listar_campos;
+    private javax.swing.JPanel jP_modificar_campos;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea2;
     private java.awt.Button jb_abrrarchivo;
