@@ -40,19 +40,25 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         jd_archivo = new javax.swing.JDialog();
         jb_cerrararchivo = new javax.swing.JButton();
         jb_salirdemenucampos = new javax.swing.JButton();
-        BT_CrearCampos = new javax.swing.JButton();
-        BT_ModificarCampos = new javax.swing.JButton();
-        BT_ListarCampos = new javax.swing.JButton();
-        BT_BorrarCampos = new javax.swing.JButton();
+        BTN_CrearCampos = new javax.swing.JButton();
+        BTN_ModificarCampos = new javax.swing.JButton();
+        BTN_ListarCampos = new javax.swing.JButton();
+        BTN_BorrarCampos = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jb_guardararchivo = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea2 = new javax.swing.JTextArea();
         JD_CrearCampos = new javax.swing.JDialog();
         jP_crear_campos = new javax.swing.JPanel();
-        btn_crear_campos = new javax.swing.JButton();
         btn_cancelar_crear_campos = new javax.swing.JButton();
-        btn_cerrar_crear_campos = new javax.swing.JButton();
+        BTN_Regresar = new javax.swing.JButton();
+        TF_NombreCampo = new javax.swing.JTextField();
+        SP_TamañoMinimo = new javax.swing.JSpinner();
+        SP_TamañoMaximo = new javax.swing.JSpinner();
+        CB_TipoDeDato = new javax.swing.JComboBox<>();
+        RB_LlavePrimariaSi = new javax.swing.JRadioButton();
+        RB_LlavePrimariaNo = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
         JD_ModificarCampos = new javax.swing.JDialog();
         jP_modificar_campos = new javax.swing.JPanel();
         btn_cerrar_modificar_campos = new javax.swing.JButton();
@@ -90,31 +96,31 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             }
         });
 
-        BT_CrearCampos.setText("Crear Campos");
-        BT_CrearCampos.addActionListener(new java.awt.event.ActionListener() {
+        BTN_CrearCampos.setText("Crear Campos");
+        BTN_CrearCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BT_CrearCamposActionPerformed(evt);
+                BTN_CrearCamposActionPerformed(evt);
             }
         });
 
-        BT_ModificarCampos.setText("Modificar Campos");
-        BT_ModificarCampos.addActionListener(new java.awt.event.ActionListener() {
+        BTN_ModificarCampos.setText("Modificar Campos");
+        BTN_ModificarCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BT_ModificarCamposActionPerformed(evt);
+                BTN_ModificarCamposActionPerformed(evt);
             }
         });
 
-        BT_ListarCampos.setText("Listar Campos");
-        BT_ListarCampos.addActionListener(new java.awt.event.ActionListener() {
+        BTN_ListarCampos.setText("Listar Campos");
+        BTN_ListarCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BT_ListarCamposActionPerformed(evt);
+                BTN_ListarCamposActionPerformed(evt);
             }
         });
 
-        BT_BorrarCampos.setText("Borrar Campos");
-        BT_BorrarCampos.addActionListener(new java.awt.event.ActionListener() {
+        BTN_BorrarCampos.setText("Borrar Campos");
+        BTN_BorrarCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BT_BorrarCamposActionPerformed(evt);
+                BTN_BorrarCamposActionPerformed(evt);
             }
         });
 
@@ -143,16 +149,16 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                     .addGroup(jd_archivoLayout.createSequentialGroup()
                         .addGap(411, 411, 411)
                         .addGroup(jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BT_CrearCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BTN_CrearCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jb_guardararchivo)
                                 .addComponent(jb_cerrararchivo)
-                                .addComponent(BT_ModificarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BTN_ModificarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jd_archivoLayout.createSequentialGroup()
                                     .addGap(14, 14, 14)
                                     .addComponent(jLabel1))
-                                .addComponent(BT_ListarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BT_BorrarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(BTN_ListarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BTN_BorrarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(60, Short.MAX_VALUE))
             .addGroup(jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_archivoLayout.createSequentialGroup()
@@ -168,13 +174,13 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                     .addGroup(jd_archivoLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(BT_CrearCampos)
+                        .addComponent(BTN_CrearCampos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BT_ModificarCampos)
+                        .addComponent(BTN_ModificarCampos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(BT_ListarCampos)
+                        .addComponent(BTN_ListarCampos)
                         .addGap(18, 18, 18)
-                        .addComponent(BT_BorrarCampos)
+                        .addComponent(BTN_BorrarCampos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jb_guardararchivo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -191,36 +197,75 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                     .addContainerGap(141, Short.MAX_VALUE)))
         );
 
-        jP_crear_campos.setBackground(new java.awt.Color(0, 204, 255));
-
-        btn_crear_campos.setText("Crear Campos");
+        jP_crear_campos.setBackground(new java.awt.Color(255, 255, 255));
 
         btn_cancelar_crear_campos.setText("Cancelar");
 
-        btn_cerrar_crear_campos.setText("Cerrar");
+        BTN_Regresar.setText("Regresar");
+
+        TF_NombreCampo.setText("jTextField1");
+
+        CB_TipoDeDato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "int", "byte", "short", "double", "float", "long", "char", "string", "boolean" }));
+
+        RB_LlavePrimariaSi.setText("SI");
+
+        RB_LlavePrimariaNo.setText("NO");
+
+        jButton1.setText("Crear Campo");
 
         javax.swing.GroupLayout jP_crear_camposLayout = new javax.swing.GroupLayout(jP_crear_campos);
         jP_crear_campos.setLayout(jP_crear_camposLayout);
         jP_crear_camposLayout.setHorizontalGroup(
             jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_crear_camposLayout.createSequentialGroup()
-                .addContainerGap(99, Short.MAX_VALUE)
-                .addComponent(btn_cerrar_crear_campos)
-                .addGap(36, 36, 36)
-                .addComponent(btn_cancelar_crear_campos)
-                .addGap(18, 18, 18)
-                .addComponent(btn_crear_campos)
-                .addGap(67, 67, 67))
+            .addGroup(jP_crear_camposLayout.createSequentialGroup()
+                .addGap(137, 137, 137)
+                .addGroup(jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_crear_camposLayout.createSequentialGroup()
+                        .addComponent(RB_LlavePrimariaSi)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(RB_LlavePrimariaNo))
+                    .addComponent(CB_TipoDeDato, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(TF_NombreCampo)
+                    .addGroup(jP_crear_camposLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(SP_TamañoMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(SP_TamañoMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(26, 26, 26))
+            .addGroup(jP_crear_camposLayout.createSequentialGroup()
+                .addGroup(jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jP_crear_camposLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(BTN_Regresar))
+                    .addGroup(jP_crear_camposLayout.createSequentialGroup()
+                        .addGap(198, 198, 198)
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(btn_cancelar_crear_campos)))
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         jP_crear_camposLayout.setVerticalGroup(
             jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_crear_camposLayout.createSequentialGroup()
-                .addContainerGap(277, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
+                .addComponent(TF_NombreCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(CB_TipoDeDato, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addGroup(jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_crear_campos)
-                    .addComponent(btn_cancelar_crear_campos)
-                    .addComponent(btn_cerrar_crear_campos))
-                .addGap(56, 56, 56))
+                    .addComponent(SP_TamañoMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SP_TamañoMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RB_LlavePrimariaSi)
+                    .addComponent(RB_LlavePrimariaNo))
+                .addGap(62, 62, 62)
+                .addGroup(jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(btn_cancelar_crear_campos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(BTN_Regresar)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout JD_CrearCamposLayout = new javax.swing.GroupLayout(JD_CrearCampos.getContentPane());
@@ -430,9 +475,9 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_salirdemenucamposActionPerformed
 
-    private void BT_BorrarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_BorrarCamposActionPerformed
+    private void BTN_BorrarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BorrarCamposActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BT_BorrarCamposActionPerformed
+    }//GEN-LAST:event_BTN_BorrarCamposActionPerformed
 
     private void jb_salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirMouseClicked
         // TODO add your handling code here:
@@ -578,17 +623,17 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_cerrararchivoMouseClicked
 
-    private void BT_CrearCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_CrearCamposActionPerformed
+    private void BTN_CrearCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_CrearCamposActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BT_CrearCamposActionPerformed
+    }//GEN-LAST:event_BTN_CrearCamposActionPerformed
 
-    private void BT_ModificarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_ModificarCamposActionPerformed
+    private void BTN_ModificarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ModificarCamposActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BT_ModificarCamposActionPerformed
+    }//GEN-LAST:event_BTN_ModificarCamposActionPerformed
 
-    private void BT_ListarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_ListarCamposActionPerformed
+    private void BTN_ListarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ListarCamposActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BT_ListarCamposActionPerformed
+    }//GEN-LAST:event_BTN_ListarCamposActionPerformed
 
     /**
      * @param args the command line arguments
@@ -626,25 +671,31 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BT_BorrarCampos;
-    private javax.swing.JButton BT_CrearCampos;
-    private javax.swing.JButton BT_ListarCampos;
-    private javax.swing.JButton BT_ModificarCampos;
+    private javax.swing.JButton BTN_BorrarCampos;
+    private javax.swing.JButton BTN_CrearCampos;
+    private javax.swing.JButton BTN_ListarCampos;
+    private javax.swing.JButton BTN_ModificarCampos;
+    private javax.swing.JButton BTN_Regresar;
+    private javax.swing.JComboBox<String> CB_TipoDeDato;
     private javax.swing.JDialog JD_BorrarCampos;
     private javax.swing.JDialog JD_CrearCampos;
     private javax.swing.JDialog JD_ListarCampos;
     private javax.swing.JDialog JD_ModificarCampos;
+    private javax.swing.JRadioButton RB_LlavePrimariaNo;
+    private javax.swing.JRadioButton RB_LlavePrimariaSi;
+    private javax.swing.JSpinner SP_TamañoMaximo;
+    private javax.swing.JSpinner SP_TamañoMinimo;
+    private javax.swing.JTextField TF_NombreCampo;
     private javax.swing.JButton btn_actualizar_listar_campos;
     private javax.swing.JButton btn_borrar_campos;
     private javax.swing.JButton btn_cancelar_borrar_campos;
     private javax.swing.JButton btn_cancelar_crear_campos;
     private javax.swing.JButton btn_cancelar_modificar_campos;
     private javax.swing.JButton btn_cerrar_borrar_campos;
-    private javax.swing.JButton btn_cerrar_crear_campos;
     private javax.swing.JButton btn_cerrar_listar_campos;
     private javax.swing.JButton btn_cerrar_modificar_campos;
-    private javax.swing.JButton btn_crear_campos;
     private javax.swing.JButton btn_listar_campos_desde_modificar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jP_borrar_campos;
     private javax.swing.JPanel jP_crear_campos;

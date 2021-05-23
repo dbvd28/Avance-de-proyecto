@@ -16,17 +16,17 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="411" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="BT_CrearCampos" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
+                              <Component id="BTN_CrearCampos" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jb_guardararchivo" min="-2" max="-2" attributes="0"/>
                                   <Component id="jb_cerrararchivo" min="-2" max="-2" attributes="0"/>
-                                  <Component id="BT_ModificarCampos" max="32767" attributes="0"/>
+                                  <Component id="BTN_ModificarCampos" max="32767" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="BT_ListarCampos" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="BT_BorrarCampos" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="BTN_ListarCampos" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="BTN_BorrarCampos" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -50,13 +50,13 @@
                       <Group type="102" attributes="0">
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="BT_CrearCampos" min="-2" max="-2" attributes="0"/>
+                          <Component id="BTN_CrearCampos" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="BT_ModificarCampos" min="-2" max="-2" attributes="0"/>
+                          <Component id="BTN_ModificarCampos" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="BT_ListarCampos" min="-2" max="-2" attributes="0"/>
+                          <Component id="BTN_ListarCampos" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="BT_BorrarCampos" min="-2" max="-2" attributes="0"/>
+                          <Component id="BTN_BorrarCampos" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jb_guardararchivo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -98,36 +98,36 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_salirdemenucamposActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BT_CrearCampos">
+        <Component class="javax.swing.JButton" name="BTN_CrearCampos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Crear Campos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_CrearCamposActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTN_CrearCamposActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BT_ModificarCampos">
+        <Component class="javax.swing.JButton" name="BTN_ModificarCampos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Modificar Campos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_ModificarCamposActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTN_ModificarCamposActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BT_ListarCampos">
+        <Component class="javax.swing.JButton" name="BTN_ListarCampos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Listar Campos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_ListarCamposActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTN_ListarCamposActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="BT_BorrarCampos">
+        <Component class="javax.swing.JButton" name="BTN_BorrarCampos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Borrar Campos"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BT_BorrarCamposActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTN_BorrarCamposActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -178,52 +178,131 @@
         <Container class="javax.swing.JPanel" name="jP_crear_campos">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="cc" red="0" type="rgb"/>
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="99" max="32767" attributes="0"/>
-                      <Component id="btn_cerrar_crear_campos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="btn_cancelar_crear_campos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btn_crear_campos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="RB_LlavePrimariaSi" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="RB_LlavePrimariaNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="CB_TipoDeDato" alignment="1" max="32767" attributes="0"/>
+                          <Component id="TF_NombreCampo" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="SP_TamañoMinimo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="SP_TamañoMaximo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="BTN_Regresar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btn_cancelar_crear_campos" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="73" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="277" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="TF_NombreCampo" min="-2" pref="27" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="CB_TipoDeDato" min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btn_crear_campos" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_cancelar_crear_campos" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_cerrar_crear_campos" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SP_TamañoMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="SP_TamañoMaximo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="RB_LlavePrimariaSi" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="RB_LlavePrimariaNo" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_cancelar_crear_campos" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                      <Component id="BTN_Regresar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btn_crear_campos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Crear Campos"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="btn_cancelar_crear_campos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btn_cerrar_crear_campos">
+            <Component class="javax.swing.JButton" name="BTN_Regresar">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cerrar"/>
+                <Property name="text" type="java.lang.String" value="Regresar"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="TF_NombreCampo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="jTextField1"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="SP_Tama&#xf1;oMinimo">
+            </Component>
+            <Component class="javax.swing.JSpinner" name="SP_Tama&#xf1;oMaximo">
+            </Component>
+            <Component class="javax.swing.JComboBox" name="CB_TipoDeDato">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="9">
+                    <StringItem index="0" value="int"/>
+                    <StringItem index="1" value="byte"/>
+                    <StringItem index="2" value="short"/>
+                    <StringItem index="3" value="double"/>
+                    <StringItem index="4" value="float"/>
+                    <StringItem index="5" value="long"/>
+                    <StringItem index="6" value="char"/>
+                    <StringItem index="7" value="string"/>
+                    <StringItem index="8" value="boolean"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="RB_LlavePrimariaSi">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="SI"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="RB_LlavePrimariaNo">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="NO"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Crear Campo"/>
               </Properties>
             </Component>
           </SubComponents>
