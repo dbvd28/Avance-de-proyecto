@@ -75,13 +75,12 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         BTN_RegresarModificarCampos = new javax.swing.JButton();
         BTN_Modificar = new javax.swing.JButton();
         TF_ModificarCampoNombre = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
         CB_ModificarCampo = new javax.swing.JComboBox<>();
         CB_ModificarTipoDato = new javax.swing.JComboBox<>();
         SP_ModificarMinimo = new javax.swing.JSpinner();
         SP_ModificarMaximo = new javax.swing.JSpinner();
         RB_ModificarLlaveSi = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        RB_ModificarLlaveNo = new javax.swing.JRadioButton();
         JD_ListarCampos = new javax.swing.JDialog();
         jP_listar_campos = new javax.swing.JPanel();
         BTN_RegresarListarCampos = new javax.swing.JButton();
@@ -96,6 +95,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         CB_BorrarCampos = new javax.swing.JComboBox<>();
         btng_llave = new javax.swing.ButtonGroup();
+        btng_modificar_llave = new javax.swing.ButtonGroup();
         jb_nuevo_archivo = new java.awt.Button();
         jb_abrir_archivo = new java.awt.Button();
         jb_salir = new java.awt.Button();
@@ -362,48 +362,47 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("jButton3");
+        CB_ModificarCampo.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CB_ModificarCampoItemStateChanged(evt);
+            }
+        });
 
         CB_ModificarTipoDato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "int", "byte", "short", "double", "float", "long", "char", "string", "boolean" }));
 
+        btng_modificar_llave.add(RB_ModificarLlaveSi);
         RB_ModificarLlaveSi.setText("SI");
 
-        jRadioButton2.setText("NO");
+        btng_modificar_llave.add(RB_ModificarLlaveNo);
+        RB_ModificarLlaveNo.setText("NO");
 
         javax.swing.GroupLayout RB_ModificarLlaveNOLayout = new javax.swing.GroupLayout(RB_ModificarLlaveNO);
         RB_ModificarLlaveNO.setLayout(RB_ModificarLlaveNOLayout);
         RB_ModificarLlaveNOLayout.setHorizontalGroup(
             RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(49, 49, 49)
                 .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(CB_ModificarCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(95, 95, 95))
-                    .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
-                            .addComponent(RB_ModificarLlaveSi)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jRadioButton2))
-                        .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TF_ModificarCampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CB_ModificarTipoDato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(83, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RB_ModificarLlaveNOLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(BTN_RegresarModificarCampos)
-                .addGap(27, 27, 27)
-                .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
-                        .addComponent(SP_ModificarMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(94, 94, 94)
-                        .addComponent(SP_ModificarMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
+                        .addComponent(BTN_RegresarModificarCampos)
+                        .addGap(27, 27, 27)
                         .addComponent(btn_cerrar_modificar_campos)
                         .addGap(42, 42, 42)
-                        .addComponent(BTN_Modificar)))
-                .addGap(44, 44, 44))
+                        .addComponent(BTN_Modificar))
+                    .addComponent(CB_ModificarCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TF_ModificarCampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CB_ModificarTipoDato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RB_ModificarLlaveNOLayout.createSequentialGroup()
+                            .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(RB_ModificarLlaveSi)
+                                .addComponent(SP_ModificarMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(SP_ModificarMaximo)
+                                .addComponent(RB_ModificarLlaveNo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         RB_ModificarLlaveNOLayout.setVerticalGroup(
             RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -414,35 +413,33 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 .addComponent(TF_ModificarCampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(CB_ModificarTipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SP_ModificarMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SP_ModificarMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RB_ModificarLlaveSi)
-                    .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(RB_ModificarLlaveNo))
+                .addGap(58, 58, 58)
                 .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cerrar_modificar_campos)
                     .addComponent(BTN_RegresarModificarCampos)
                     .addComponent(BTN_Modificar))
-                .addGap(73, 73, 73))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout JD_ModificarCamposLayout = new javax.swing.GroupLayout(JD_ModificarCampos.getContentPane());
         JD_ModificarCampos.getContentPane().setLayout(JD_ModificarCamposLayout);
         JD_ModificarCamposLayout.setHorizontalGroup(
             JD_ModificarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(RB_ModificarLlaveNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        JD_ModificarCamposLayout.setVerticalGroup(
-            JD_ModificarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JD_ModificarCamposLayout.createSequentialGroup()
                 .addComponent(RB_ModificarLlaveNO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+        );
+        JD_ModificarCamposLayout.setVerticalGroup(
+            JD_ModificarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(RB_ModificarLlaveNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jP_listar_campos.setBackground(new java.awt.Color(255, 255, 255));
@@ -685,7 +682,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         fr = null;
         br = null;
         try {
@@ -695,6 +692,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             String[] lista_campos;
             DefaultComboBoxModel modelo = (DefaultComboBoxModel) CB_ModificarCampo.getModel();
             DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) CB_BorrarCampos.getModel();
+            //modelo.addElement("Seleccione: ");
+            //CB_ModificarCampo.setModel(modelo);
             while ((linea = br.readLine()) != null) {
                 lista_campos = linea.split("&");
                 for (int i = 0; i < lista_campos.length; i++) {
@@ -867,7 +866,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     void formatear_listado(String campo_actual) {
         //campo_actual += "¡";
         String imprimir = "Nombre del Campo: ";
-        int cont = 0;
+        int cont = 0;//esta variable sirve para contar por cual campo va
         int num_tipo_dato = 0;
         for (int i = 0; i < campo_actual.length(); i++) {
             char caracter_actual = campo_actual.charAt(i);
@@ -911,7 +910,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                                 break;
                         }//fin switch
                         imprimir += tipo_dato;
-                        
+
                         break;
                     case 2:
                         imprimir += "\nLongitud Maxima: ";
@@ -954,58 +953,10 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         boolean -> 8
          */
         String nombre_campo = TF_NombreCampo.getText();
-        if (!validar_nombre_campo()) {//si el nombre no es valido
+        if (!validar_nombre_campo(nombre_campo)) {//si el nombre no es valido
             JOptionPane.showMessageDialog(this, "El nombre del campo no es válido.");
         } else {
-            //String tipo_dato = CB_TipoDeDato.getSelectedItem().toString();
-            System.out.println(CB_TipoDeDato.getSelectedItem().toString());
-            double longitud_minima = Double.parseDouble(SP_TamañoMinimo.getValue() + ""),
-                    longitud_maxima = Double.parseDouble(SP_TamañoMaximo.getValue() + "");
-            boolean llave_primaria = false;
-            if (RB_LlavePrimariaSi.isSelected()) {
-                llave_primaria = true;
-            }
-            /*
-            F = false
-            T = true
-             */
-            char llave_primaria_siono = 'F';
-            if (llave_primaria) {
-                llave_primaria_siono = 'T';
-            }
-            int codigo_tipo_dato = 0;
-            switch (CB_TipoDeDato.getSelectedItem().toString()) {
-                case "byte":
-                    codigo_tipo_dato = 1;
-                    break;
-                case "short":
-                    codigo_tipo_dato = 2;
-                    break;
-                case "double":
-                    codigo_tipo_dato = 3;
-                    break;
-                case "float":
-                    codigo_tipo_dato = 4;
-                    break;
-                case "long":
-                    codigo_tipo_dato = 5;
-                    break;
-                case "char":
-                    codigo_tipo_dato = 6;
-                    break;
-                case "String":
-                    codigo_tipo_dato = 7;
-                    break;
-                case "boolean":
-                    codigo_tipo_dato = 8;
-                    break;
-            }
-            String linea
-                    = nombre_campo + "¡"
-                    + (codigo_tipo_dato + "¡")
-                    + (longitud_minima + "¡")
-                    + (longitud_maxima + "¡")
-                    + llave_primaria_siono + "&";
+            String linea = crear_campo(nombre_campo);
             escribir_archivo(linea);
             JOptionPane.showMessageDialog(this, "¡Se ha creado el campo exitosamente!");
             TF_NombreCampo.setText("");
@@ -1036,81 +987,216 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
     private void BTN_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ModificarActionPerformed
         // TODO add your handling code here:
-        
-        /*
-        int -> 0
-        byte -> 1
-        short -> 2
-        double -> 3
-        float -> 4
-        long -> 5
-        char -> 6
-        String -> 7
-        boolean -> 8
-         */
-        String nombre_campo = TF_ModificarCampoNombre.getText();
-        if (!validar_nombre_campo()) {//si el nombre no es valido
-            JOptionPane.showMessageDialog(this, "El nombre del campo no es válido.");
-        } else {
-            double longitud_minima = Double.parseDouble(SP_ModificarMinimo.getValue() + ""),
-                    longitud_maxima = Double.parseDouble(SP_ModificarMaximo.getValue() + "");
-            boolean llave_primaria = false;
-            if (RB_ModificarLlaveSi.isSelected()) {
-                llave_primaria = true;
-            }
-            /*
-            F = false
-            T = true
-             */
-            char llave_primaria_siono = 'F';
-            if (llave_primaria) {
-                llave_primaria_siono = 'T';
-            }
-            int codigo_tipo_dato = 0;
-            switch (CB_TipoDeDato.getSelectedItem().toString()) {
-                case "byte":
-                    codigo_tipo_dato = 1;
-                    break;
-                case "short":
-                    codigo_tipo_dato = 2;
-                    break;
-                case "double":
-                    codigo_tipo_dato = 3;
-                    break;
-                case "float":
-                    codigo_tipo_dato = 4;
-                    break;
-                case "long":
-                    codigo_tipo_dato = 5;
-                    break;
-                case "char":
-                    codigo_tipo_dato = 6;
-                    break;
-                case "String":
-                    codigo_tipo_dato = 7;
-                    break;
-                case "boolean":
-                    codigo_tipo_dato = 8;
-                    break;
-            }
-            String linea
-                    = nombre_campo + "¡"
-                    + (codigo_tipo_dato + "¡")
-                    + (longitud_minima + "¡")
-                    + (longitud_maxima + "¡")
-                    + llave_primaria_siono + "&";
-            escribir_archivo(linea);
-            JOptionPane.showMessageDialog(this, "¡Se ha creado el campo exitosamente!");
-            TF_NombreCampo.setText("");
-            CB_TipoDeDato.setSelectedIndex(0);
-            SP_TamañoMinimo.setValue(0);
-            SP_TamañoMaximo.setValue(0);
-            RB_LlavePrimariaNo.setSelected(true);
-        }//fin else validar nombre campo
+        //modificar();
+        try {
+            int pos_campo = CB_ModificarCampo.getSelectedIndex();
+            String nombre_campo = TF_ModificarCampoNombre.getText();
+            if (!validar_nombre_campo(nombre_campo)) {//si el nombre no es valido
+                JOptionPane.showMessageDialog(this, "El nombre del campo no es válido.");
+            } else {
+                String modificacion = crear_campo(nombre_campo);//agarro el campo formateado en cadena
+                String campos_originales = "";//servira para agarrar todos los campos
+                // Forma de Escribir:
+                FileReader fr = null;
+                BufferedReader br = null;
+                fr = null;
+                br = null;
+                try {
+                    fr = new FileReader(archivo_actual);
+                    br = new BufferedReader(fr);
+                    campos_originales = br.readLine();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } // Fin Try Catch
+                try {
+                    br.close();
+                    fr.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                } // Fin Try Catch
+                String campo_seleccionado = "";//sirve para guardar solo el campo que fue seleccionado
+                String[] lista_campos = campos_originales.split("&");
+                campo_seleccionado = lista_campos[pos_campo];
+                System.out.println("campo original " + campos_originales);
+                System.out.println("campo seleccionado " + campo_seleccionado);
+                System.out.println("modificar -> " + modificacion);
+                String campos_modificados
+                        = campos_originales.replaceAll(campo_seleccionado, modificacion.substring(0, modificacion.length() - 2));
+                actualizar_archivo(campos_modificados);
+                JOptionPane.showMessageDialog(this, "¡Se ha modificado el campo con exito!");
+            }//fin if
+        } catch (Exception e) {
+            System.out.println("stracktrace");
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_BTN_ModificarActionPerformed
 
-    boolean validar_nombre_campo() {// *validar que no esté vacio*
+    private void CB_ModificarCampoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_ModificarCampoItemStateChanged
+        // TODO add your handling code here:
+        actualizar_gui_modificar();
+    }//GEN-LAST:event_CB_ModificarCampoItemStateChanged
 
+    void actualizar_gui_modificar() {
+        int pos_campo = CB_ModificarCampo.getSelectedIndex();
+        String campo_seleccionado = "";
+        String[] lista_campos = new String[CB_ModificarCampo.getItemCount()];
+        try {
+            FileReader fr = null;
+            BufferedReader br = null;
+            try {
+                fr = new FileReader(archivo_actual);
+                br = new BufferedReader(fr);
+                String linea = "";
+                while ((linea = br.readLine()) != null) {
+                    lista_campos = linea.split("&");
+                } // Fin While
+            } catch (Exception e) {
+                System.out.println("saludos ");
+                e.printStackTrace();
+            } // Fin Try Catch
+            br.close();
+            fr.close();
+            campo_seleccionado = lista_campos[pos_campo];
+            System.out.println(campo_seleccionado);
+            String[] atributos_campo = campo_seleccionado.split("¡");
+            for (int i = 0; i < atributos_campo.length; i++) {
+                switch (i) {
+                    case 0:
+                        TF_ModificarCampoNombre.setText(atributos_campo[i]);
+                        break;
+                    case 1:
+                        int x = Integer.parseInt(atributos_campo[i]);
+                        //CB_ModificarTipoDato.set;
+                        break;
+                    case 2:
+                        SP_ModificarMinimo.setValue(Double.parseDouble(atributos_campo[i]));
+                        break;
+                    case 3:
+                        SP_ModificarMaximo.setValue(Double.parseDouble(atributos_campo[i]));
+                        break;
+                    case 4:
+                        if (atributos_campo[i].equals("T")) {
+                            RB_ModificarLlaveNo.setSelected(false);
+                            RB_ModificarLlaveSi.setSelected(true);
+                        } else {
+                            RB_ModificarLlaveSi.setSelected(false);
+                            RB_ModificarLlaveNo.setSelected(true);
+                        }
+                        break;
+                }//fin switch    
+            }//fin for atributos_campo
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Fin Try Catch
+    }
+
+    String crear_campo(String nombre_campo) {
+        System.out.println(CB_TipoDeDato.getSelectedItem().toString());
+        double longitud_minima = Double.parseDouble(SP_TamañoMinimo.getValue() + ""),
+                longitud_maxima = Double.parseDouble(SP_TamañoMaximo.getValue() + "");
+        boolean llave_primaria = false;
+        if (RB_LlavePrimariaSi.isSelected()) {
+            llave_primaria = true;
+        }
+        /*
+            F = false
+            T = true
+         */
+        char llave_primaria_siono = 'F';
+        if (llave_primaria) {
+            llave_primaria_siono = 'T';
+        }
+        int codigo_tipo_dato = 0;
+        switch (CB_TipoDeDato.getSelectedItem().toString()) {
+            case "byte":
+                codigo_tipo_dato = 1;
+                break;
+            case "short":
+                codigo_tipo_dato = 2;
+                break;
+            case "double":
+                codigo_tipo_dato = 3;
+                break;
+            case "float":
+                codigo_tipo_dato = 4;
+                break;
+            case "long":
+                codigo_tipo_dato = 5;
+                break;
+            case "char":
+                codigo_tipo_dato = 6;
+                break;
+            case "String":
+                codigo_tipo_dato = 7;
+                break;
+            case "boolean":
+                codigo_tipo_dato = 8;
+                break;
+        }
+        String linea
+                = nombre_campo + "¡"
+                + (codigo_tipo_dato + "¡")
+                + (longitud_minima + "¡")
+                + (longitud_maxima + "¡")
+                + llave_primaria_siono + "&";
+        return linea;
+    }
+
+    String modificar_campo(String nombre_campo) {
+        //System.out.println(CB_TipoDeDato.getSelectedItem().toString());
+        double longitud_minima = Double.parseDouble(SP_ModificarMinimo.getValue() + ""),
+                longitud_maxima = Double.parseDouble(SP_ModificarMaximo.getValue() + "");
+        boolean llave_primaria = false;
+        if (RB_ModificarLlaveSi.isSelected()) {
+            llave_primaria = true;
+        }
+        /*
+            F = false
+            T = true
+         */
+        char llave_primaria_siono = 'F';
+        if (llave_primaria) {
+            llave_primaria_siono = 'T';
+        }
+        int codigo_tipo_dato = 0;
+        switch (CB_ModificarTipoDato.getSelectedItem().toString()) {
+            case "byte":
+                codigo_tipo_dato = 1;
+                break;
+            case "short":
+                codigo_tipo_dato = 2;
+                break;
+            case "double":
+                codigo_tipo_dato = 3;
+                break;
+            case "float":
+                codigo_tipo_dato = 4;
+                break;
+            case "long":
+                codigo_tipo_dato = 5;
+                break;
+            case "char":
+                codigo_tipo_dato = 6;
+                break;
+            case "String":
+                codigo_tipo_dato = 7;
+                break;
+            case "boolean":
+                codigo_tipo_dato = 8;
+                break;
+        }//fin switch
+        String linea
+                = nombre_campo + "¡"
+                + (codigo_tipo_dato + "¡")
+                + (longitud_minima + "¡")
+                + (longitud_maxima + "¡")
+                + llave_primaria_siono + "&";
+        return linea;
+    }
+
+    boolean validar_nombre_campo(String nombre_campo) {// *validar que no esté vacio*
+        
         return true;
     }
 
@@ -1134,7 +1220,30 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             fw.close();
         } catch (IOException ex) {
             ex.printStackTrace();
-        }
+        }//fin try catch
+    }//fin método
+
+    void actualizar_archivo(String campos_modificados) {
+        // Forma de Escribir:
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        try {
+            //archivo = new File("./salida.txt");
+            fw = new FileWriter(archivo_actual); // Sobreescribe 
+            fw = new FileWriter(archivo_actual, true); // Respeta el contenido
+            bw = new BufferedWriter(fw);
+            bw.write(campos_modificados);
+            //bw.newLine(); ocupamos que escriba derecho para evitar fragmentacion, por eso la comentamos
+            bw.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Fin Try Catch
+        try {
+            bw.close();
+            fw.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }//fin try catch
     }
 
     /**
@@ -1193,6 +1302,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JRadioButton RB_LlavePrimariaNo;
     private javax.swing.JRadioButton RB_LlavePrimariaSi;
     private javax.swing.JPanel RB_ModificarLlaveNO;
+    private javax.swing.JRadioButton RB_ModificarLlaveNo;
     private javax.swing.JRadioButton RB_ModificarLlaveSi;
     private javax.swing.JSpinner SP_ModificarMaximo;
     private javax.swing.JSpinner SP_ModificarMinimo;
@@ -1208,8 +1318,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JButton btn_cerrar_modificar_campos;
     private javax.swing.JButton btn_crear_campo;
     private javax.swing.ButtonGroup btng_llave;
+    private javax.swing.ButtonGroup btng_modificar_llave;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1220,7 +1330,6 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JPanel jP_borrar_campos;
     private javax.swing.JPanel jP_crear_campos;
     private javax.swing.JPanel jP_listar_campos;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea2;
