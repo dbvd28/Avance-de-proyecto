@@ -13,6 +13,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -69,13 +70,18 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         JD_ModificarCampos = new javax.swing.JDialog();
-        jP_modificar_campos = new javax.swing.JPanel();
+        RB_ModificarLlaveNO = new javax.swing.JPanel();
         btn_cerrar_modificar_campos = new javax.swing.JButton();
-        btn_cancelar_modificar_campos = new javax.swing.JButton();
-        btn_listar_campos_desde_modificar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        BTN_RegresarModificarCampos = new javax.swing.JButton();
+        BTN_Modificar = new javax.swing.JButton();
+        TF_ModificarCampoNombre = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        CB_ModificarCampo = new javax.swing.JComboBox<>();
+        CB_ModificarTipoDato = new javax.swing.JComboBox<>();
+        SP_ModificarMinimo = new javax.swing.JSpinner();
+        SP_ModificarMaximo = new javax.swing.JSpinner();
+        RB_ModificarLlaveSi = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
         JD_ListarCampos = new javax.swing.JDialog();
         jP_listar_campos = new javax.swing.JPanel();
         BTN_RegresarListarCampos = new javax.swing.JButton();
@@ -88,7 +94,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         btn_cerrar_borrar_campos = new javax.swing.JButton();
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        CB_BorrarCampos = new javax.swing.JComboBox<>();
         btng_llave = new javax.swing.ButtonGroup();
         jb_nuevo_archivo = new java.awt.Button();
         jb_abrir_archivo = new java.awt.Button();
@@ -338,54 +344,91 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             .addComponent(jP_crear_campos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jP_modificar_campos.setBackground(new java.awt.Color(255, 255, 255));
+        RB_ModificarLlaveNO.setBackground(new java.awt.Color(255, 255, 255));
 
         btn_cerrar_modificar_campos.setText("Cerrar");
 
-        btn_cancelar_modificar_campos.setText("Cancelar");
+        BTN_RegresarModificarCampos.setText("Regresar");
+        BTN_RegresarModificarCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_RegresarModificarCamposActionPerformed(evt);
+            }
+        });
 
-        btn_listar_campos_desde_modificar.setText("Listar Campos");
-
-        jTextField1.setText("jTextField1");
+        BTN_Modificar.setText("Modificar Campos");
+        BTN_Modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_ModificarActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("jButton3");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CB_ModificarTipoDato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "int", "byte", "short", "double", "float", "long", "char", "string", "boolean" }));
 
-        javax.swing.GroupLayout jP_modificar_camposLayout = new javax.swing.GroupLayout(jP_modificar_campos);
-        jP_modificar_campos.setLayout(jP_modificar_camposLayout);
-        jP_modificar_camposLayout.setHorizontalGroup(
-            jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_modificar_camposLayout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
-                .addGroup(jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jP_modificar_camposLayout.createSequentialGroup()
-                            .addComponent(btn_cancelar_modificar_campos)
-                            .addGap(27, 27, 27)
-                            .addComponent(btn_cerrar_modificar_campos))))
-                .addGap(42, 42, 42)
-                .addGroup(jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_listar_campos_desde_modificar)
-                    .addComponent(jButton3))
+        RB_ModificarLlaveSi.setText("SI");
+
+        jRadioButton2.setText("NO");
+
+        javax.swing.GroupLayout RB_ModificarLlaveNOLayout = new javax.swing.GroupLayout(RB_ModificarLlaveNO);
+        RB_ModificarLlaveNO.setLayout(RB_ModificarLlaveNOLayout);
+        RB_ModificarLlaveNOLayout.setHorizontalGroup(
+            RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CB_ModificarCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
+                        .addComponent(jButton3)
+                        .addGap(95, 95, 95))
+                    .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
+                            .addComponent(RB_ModificarLlaveSi)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jRadioButton2))
+                        .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TF_ModificarCampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CB_ModificarTipoDato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(83, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RB_ModificarLlaveNOLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BTN_RegresarModificarCampos)
+                .addGap(27, 27, 27)
+                .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
+                        .addComponent(SP_ModificarMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(94, 94, 94)
+                        .addComponent(SP_ModificarMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(RB_ModificarLlaveNOLayout.createSequentialGroup()
+                        .addComponent(btn_cerrar_modificar_campos)
+                        .addGap(42, 42, 42)
+                        .addComponent(BTN_Modificar)))
                 .addGap(44, 44, 44))
         );
-        jP_modificar_camposLayout.setVerticalGroup(
-            jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_modificar_camposLayout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
-                .addGap(54, 54, 54)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
-                .addGroup(jP_modificar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        RB_ModificarLlaveNOLayout.setVerticalGroup(
+            RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RB_ModificarLlaveNOLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(CB_ModificarCampo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(TF_ModificarCampoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(CB_ModificarTipoDato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SP_ModificarMaximo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SP_ModificarMinimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RB_ModificarLlaveSi)
+                    .addComponent(jRadioButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(RB_ModificarLlaveNOLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cerrar_modificar_campos)
-                    .addComponent(btn_cancelar_modificar_campos)
-                    .addComponent(btn_listar_campos_desde_modificar))
+                    .addComponent(BTN_RegresarModificarCampos)
+                    .addComponent(BTN_Modificar))
                 .addGap(73, 73, 73))
         );
 
@@ -393,12 +436,12 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         JD_ModificarCampos.getContentPane().setLayout(JD_ModificarCamposLayout);
         JD_ModificarCamposLayout.setHorizontalGroup(
             JD_ModificarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jP_modificar_campos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(RB_ModificarLlaveNO, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JD_ModificarCamposLayout.setVerticalGroup(
             JD_ModificarCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JD_ModificarCamposLayout.createSequentialGroup()
-                .addComponent(jP_modificar_campos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RB_ModificarLlaveNO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -461,8 +504,6 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
         jButton2.setText("Buscar");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         javax.swing.GroupLayout jP_borrar_camposLayout = new javax.swing.GroupLayout(jP_borrar_campos);
         jP_borrar_campos.setLayout(jP_borrar_camposLayout);
         jP_borrar_camposLayout.setHorizontalGroup(
@@ -472,20 +513,16 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 .addComponent(btn_cerrar_borrar_campos)
                 .addGap(14, 14, 14)
                 .addGroup(jP_borrar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CB_BorrarCampos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jP_borrar_camposLayout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
+                        .addComponent(jButton2))
                     .addGroup(jP_borrar_camposLayout.createSequentialGroup()
-                        .addGroup(jP_borrar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jP_borrar_camposLayout.createSequentialGroup()
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 140, Short.MAX_VALUE)
-                                .addComponent(jButton2))
-                            .addGroup(jP_borrar_camposLayout.createSequentialGroup()
-                                .addComponent(btn_cancelar_borrar_campos)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_borrar_campos)))
-                        .addGap(52, 52, 52))))
+                        .addComponent(btn_cancelar_borrar_campos)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_borrar_campos)))
+                .addGap(52, 52, 52))
         );
         jP_borrar_camposLayout.setVerticalGroup(
             jP_borrar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -495,8 +532,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
                 .addGap(63, 63, 63)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121)
+                .addComponent(CB_BorrarCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(112, 112, 112)
                 .addGroup(jP_borrar_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_cancelar_borrar_campos)
                     .addComponent(btn_borrar_campos))
@@ -648,6 +685,34 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
+        fr = null;
+        br = null;
+        try {
+            fr = new FileReader(archivo_actual);
+            br = new BufferedReader(fr);
+            String linea = "";
+            String[] lista_campos;
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) CB_ModificarCampo.getModel();
+            DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) CB_BorrarCampos.getModel();
+            while ((linea = br.readLine()) != null) {
+                lista_campos = linea.split("&");
+                for (int i = 0; i < lista_campos.length; i++) {
+                    modelo.addElement(lista_campos[i]);
+                    modelo2.addElement(lista_campos[i]);
+                    CB_ModificarCampo.setModel(modelo);
+                    CB_BorrarCampos.setModel(modelo2);
+                } // Fin For
+            } // Fin While
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Fin Try Catch
+        try {
+            br.close();
+            fr.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } // Fin Try Catch
         JD_MenuCampos.pack();
         JD_MenuCampos.setLocationRelativeTo(null);
         JD_MenuCampos.setVisible(true);
@@ -815,7 +880,6 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                         i++;
                         imprimir += "\nTipo de Dato: ";
                         num_tipo_dato = Integer.parseInt(campo_actual.charAt(i) + "");
-                        //System.out.println("num " + num_tipo_dato);
                         String tipo_dato = "";
                         switch (num_tipo_dato) {
                             case 0:
@@ -847,6 +911,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                                 break;
                         }//fin switch
                         imprimir += tipo_dato;
+                        
                         break;
                     case 2:
                         imprimir += "\nLongitud Maxima: ";
@@ -963,6 +1028,87 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         JD_MenuCampos.setVisible(true);
     }//GEN-LAST:event_BTN_RegresarListarCamposActionPerformed
 
+    private void BTN_RegresarModificarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_RegresarModificarCamposActionPerformed
+        // TODO add your handling code here:
+        JD_ModificarCampos.setVisible(false);
+        JD_MenuCampos.setVisible(true);
+    }//GEN-LAST:event_BTN_RegresarModificarCamposActionPerformed
+
+    private void BTN_ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ModificarActionPerformed
+        // TODO add your handling code here:
+        
+        /*
+        int -> 0
+        byte -> 1
+        short -> 2
+        double -> 3
+        float -> 4
+        long -> 5
+        char -> 6
+        String -> 7
+        boolean -> 8
+         */
+        String nombre_campo = TF_ModificarCampoNombre.getText();
+        if (!validar_nombre_campo()) {//si el nombre no es valido
+            JOptionPane.showMessageDialog(this, "El nombre del campo no es válido.");
+        } else {
+            double longitud_minima = Double.parseDouble(SP_ModificarMinimo.getValue() + ""),
+                    longitud_maxima = Double.parseDouble(SP_ModificarMaximo.getValue() + "");
+            boolean llave_primaria = false;
+            if (RB_ModificarLlaveSi.isSelected()) {
+                llave_primaria = true;
+            }
+            /*
+            F = false
+            T = true
+             */
+            char llave_primaria_siono = 'F';
+            if (llave_primaria) {
+                llave_primaria_siono = 'T';
+            }
+            int codigo_tipo_dato = 0;
+            switch (CB_TipoDeDato.getSelectedItem().toString()) {
+                case "byte":
+                    codigo_tipo_dato = 1;
+                    break;
+                case "short":
+                    codigo_tipo_dato = 2;
+                    break;
+                case "double":
+                    codigo_tipo_dato = 3;
+                    break;
+                case "float":
+                    codigo_tipo_dato = 4;
+                    break;
+                case "long":
+                    codigo_tipo_dato = 5;
+                    break;
+                case "char":
+                    codigo_tipo_dato = 6;
+                    break;
+                case "String":
+                    codigo_tipo_dato = 7;
+                    break;
+                case "boolean":
+                    codigo_tipo_dato = 8;
+                    break;
+            }
+            String linea
+                    = nombre_campo + "¡"
+                    + (codigo_tipo_dato + "¡")
+                    + (longitud_minima + "¡")
+                    + (longitud_maxima + "¡")
+                    + llave_primaria_siono + "&";
+            escribir_archivo(linea);
+            JOptionPane.showMessageDialog(this, "¡Se ha creado el campo exitosamente!");
+            TF_NombreCampo.setText("");
+            CB_TipoDeDato.setSelectedIndex(0);
+            SP_TamañoMinimo.setValue(0);
+            SP_TamañoMaximo.setValue(0);
+            RB_LlavePrimariaNo.setSelected(true);
+        }//fin else validar nombre campo
+    }//GEN-LAST:event_BTN_ModificarActionPerformed
+
     boolean validar_nombre_campo() {// *validar que no esté vacio*
 
         return true;
@@ -1030,9 +1176,14 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JButton BTN_BorrarCampos;
     private javax.swing.JButton BTN_CrearCampos;
     private javax.swing.JButton BTN_ListarCampos;
+    private javax.swing.JButton BTN_Modificar;
     private javax.swing.JButton BTN_ModificarCampos;
     private javax.swing.JButton BTN_RegresarCrearCampos;
     private javax.swing.JButton BTN_RegresarListarCampos;
+    private javax.swing.JButton BTN_RegresarModificarCampos;
+    private javax.swing.JComboBox<String> CB_BorrarCampos;
+    private javax.swing.JComboBox<String> CB_ModificarCampo;
+    private javax.swing.JComboBox<String> CB_ModificarTipoDato;
     private javax.swing.JComboBox<String> CB_TipoDeDato;
     private javax.swing.JDialog JD_BorrarCampos;
     private javax.swing.JDialog JD_CrearCampos;
@@ -1041,23 +1192,24 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JDialog JD_ModificarCampos;
     private javax.swing.JRadioButton RB_LlavePrimariaNo;
     private javax.swing.JRadioButton RB_LlavePrimariaSi;
+    private javax.swing.JPanel RB_ModificarLlaveNO;
+    private javax.swing.JRadioButton RB_ModificarLlaveSi;
+    private javax.swing.JSpinner SP_ModificarMaximo;
+    private javax.swing.JSpinner SP_ModificarMinimo;
     private javax.swing.JSpinner SP_TamañoMaximo;
     private javax.swing.JSpinner SP_TamañoMinimo;
     private javax.swing.JTextArea TA_ListarCampos;
+    private javax.swing.JTextField TF_ModificarCampoNombre;
     private javax.swing.JTextField TF_NombreCampo;
     private javax.swing.JButton btn_borrar_campos;
     private javax.swing.JButton btn_cancelar_borrar_campos;
     private javax.swing.JButton btn_cancelar_crear_campos;
-    private javax.swing.JButton btn_cancelar_modificar_campos;
     private javax.swing.JButton btn_cerrar_borrar_campos;
     private javax.swing.JButton btn_cerrar_modificar_campos;
     private javax.swing.JButton btn_crear_campo;
-    private javax.swing.JButton btn_listar_campos_desde_modificar;
     private javax.swing.ButtonGroup btng_llave;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1068,11 +1220,10 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JPanel jP_borrar_campos;
     private javax.swing.JPanel jP_crear_campos;
     private javax.swing.JPanel jP_listar_campos;
-    private javax.swing.JPanel jP_modificar_campos;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private java.awt.Button jb_abrir_archivo;
     private javax.swing.JButton jb_cerrararchivo;
