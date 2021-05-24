@@ -777,9 +777,12 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 String linea = "";
                 String[] lista_campos;
                 while ((linea = br.readLine()) != null) {
-                    lista_campos = linea.split("-");
-                    TA_ListarCampos.append(lista_campos[0]);
-                    TA_ListarCampos.append("\n");
+                    lista_campos = linea.split("&");
+                    for (int i = 0; i < lista_campos.length; i++) {
+                        formatear_listado(lista_campos[i]);
+                        /*TA_ListarCampos.append(lista_campos[i]);
+                        TA_ListarCampos.append("\n");*/
+                    }//fin for
                 } // Fin While
             } catch (Exception e) {
                 e.printStackTrace();
@@ -795,6 +798,82 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             e.printStackTrace();
         } // Fin Try Catch
     }//GEN-LAST:event_BTN_ListarCamposActionPerformed
+
+    void formatear_listado(String campo_actual) {
+        //campo_actual += "¡";
+        String imprimir = "Nombre del Campo: ";
+        int cont = 0;
+        int num_tipo_dato = 0;
+        for (int i = 0; i < campo_actual.length(); i++) {
+            char caracter_actual = campo_actual.charAt(i);
+            if ((caracter_actual + "").equals("¡")) {
+                //imprimir += " - ";
+                cont++;
+                System.out.print("cont: " + cont + "  ");
+                switch (cont) {
+                    case 1:
+                        i++;
+                        imprimir += "\nTipo de Dato: ";
+                        num_tipo_dato = Integer.parseInt(campo_actual.charAt(i) + "");
+                        //System.out.println("num " + num_tipo_dato);
+                        String tipo_dato = "";
+                        switch (num_tipo_dato) {
+                            case 0:
+                                tipo_dato = "int";
+                                break;
+                            case 1:
+                                tipo_dato = "byte";
+                                break;
+                            case 2:
+                                tipo_dato = "short";
+                                break;
+                            case 3:
+                                tipo_dato = "double";
+                                break;
+                            case 4:
+                                tipo_dato = "float";
+                                break;
+                            case 5:
+                                tipo_dato = "long";
+                                break;
+                            case 6:
+                                tipo_dato = "char";
+                                break;
+                            case 7:
+                                tipo_dato = "String";
+                                break;
+                            case 8:
+                                tipo_dato = "boolean";
+                                break;
+                        }//fin switch
+                        imprimir += tipo_dato;
+                        break;
+                    case 2:
+                        imprimir += "\nLongitud Maxima: ";
+                        break;
+                    case 3:
+                        imprimir += "\nLongitud Minima: ";
+                        break;
+                    case 4:
+                        i++;
+                        if ((campo_actual.charAt(i) + "").equals("T")) {
+                            imprimir += "\nLLave: Sí";
+                        } else {
+                            imprimir += "\nLLave: No";
+                        }
+                        cont = 0;
+                        break;
+                }//*/
+            } else if (!(campo_actual.charAt(i) + "").equals("¡")) {
+                //System.out.println(caracter_actual);
+                imprimir += caracter_actual;
+            }//fin else
+        }//fin for
+        imprimir += "\n" + "\n";
+        System.out.println("");
+        System.out.println(imprimir);
+        TA_ListarCampos.append(imprimir);
+    }//fin método
 
     private void btn_crear_campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crear_campoActionPerformed
         // TODO add your handling code here:
@@ -813,7 +892,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         if (!validar_nombre_campo()) {//si el nombre no es valido
             JOptionPane.showMessageDialog(this, "El nombre del campo no es válido.");
         } else {
-            String tipo_dato = CB_TipoDeDato.getSelectedItem() + "";
+            //String tipo_dato = CB_TipoDeDato.getSelectedItem().toString();
+            System.out.println(CB_TipoDeDato.getSelectedItem().toString());
             double longitud_minima = Double.parseDouble(SP_TamañoMinimo.getValue() + ""),
                     longitud_maxima = Double.parseDouble(SP_TamañoMaximo.getValue() + "");
             boolean llave_primaria = false;
@@ -828,13 +908,39 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             if (llave_primaria) {
                 llave_primaria_siono = 'T';
             }
-            int codigo_tipo_dato = CB_TipoDeDato.getItemCount() - 1;
+            int codigo_tipo_dato = 0;
+            switch (CB_TipoDeDato.getSelectedItem().toString()) {
+                case "byte":
+                    codigo_tipo_dato = 1;
+                    break;
+                case "short":
+                    codigo_tipo_dato = 2;
+                    break;
+                case "double":
+                    codigo_tipo_dato = 3;
+                    break;
+                case "float":
+                    codigo_tipo_dato = 4;
+                    break;
+                case "long":
+                    codigo_tipo_dato = 5;
+                    break;
+                case "char":
+                    codigo_tipo_dato = 6;
+                    break;
+                case "String":
+                    codigo_tipo_dato = 7;
+                    break;
+                case "boolean":
+                    codigo_tipo_dato = 8;
+                    break;
+            }
             String linea
-                    = nombre_campo + "?"
-                    + (codigo_tipo_dato + "?")
-                    + (longitud_minima + "?")
-                    + (longitud_maxima + "?")
-                    + llave_primaria_siono + "-";
+                    = nombre_campo + "¡"
+                    + (codigo_tipo_dato + "¡")
+                    + (longitud_minima + "¡")
+                    + (longitud_maxima + "¡")
+                    + llave_primaria_siono + "&";
             escribir_archivo(linea);
             JOptionPane.showMessageDialog(this, "¡Se ha creado el campo exitosamente!");
             TF_NombreCampo.setText("");
