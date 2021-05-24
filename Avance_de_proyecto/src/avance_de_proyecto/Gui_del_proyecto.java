@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
@@ -492,6 +493,11 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         jP_borrar_campos.setBackground(new java.awt.Color(255, 255, 255));
 
         btn_borrar_campos.setText("Borrar Campo(s)");
+        btn_borrar_campos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_borrar_camposActionPerformed(evt);
+            }
+        });
 
         btn_cancelar_borrar_campos.setText("Cancelar");
 
@@ -682,36 +688,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        fr = null;
-        br = null;
-        try {
-            fr = new FileReader(archivo_actual);
-            br = new BufferedReader(fr);
-            String linea = "";
-            String[] lista_campos;
-            DefaultComboBoxModel modelo = (DefaultComboBoxModel) CB_ModificarCampo.getModel();
-            DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) CB_BorrarCampos.getModel();
-            //modelo.addElement("Seleccione: ");
-            //CB_ModificarCampo.setModel(modelo);
-            while ((linea = br.readLine()) != null) {
-                lista_campos = linea.split("&");
-                for (int i = 0; i < lista_campos.length; i++) {
-                    modelo.addElement(lista_campos[i]);
-                    modelo2.addElement(lista_campos[i]);
-                    CB_ModificarCampo.setModel(modelo);
-                    CB_BorrarCampos.setModel(modelo2);
-                } // Fin For
-            } // Fin While
-        } catch (Exception e) {
-            e.printStackTrace();
-        } // Fin Try Catch
-        try {
-            br.close();
-            fr.close();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } // Fin Try Catch
+        Cargado_ComboBox();
         JD_MenuCampos.pack();
         JD_MenuCampos.setLocationRelativeTo(null);
         JD_MenuCampos.setVisible(true);
@@ -953,9 +930,12 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         boolean -> 8
          */
         String nombre_campo = TF_NombreCampo.getText();
-        if (!validar_nombre_campo(nombre_campo)) {//si el nombre no es valido
-            JOptionPane.showMessageDialog(this, "El nombre del campo no es válido.");
+        if (nombre_campo.equals("")) {
+            JOptionPane.showMessageDialog(this, "¡Ha dejado el nombre del campo en blanco!");
+        } else if (validar_nombre_campo(nombre_campo) == false) {
+            JOptionPane.showMessageDialog(this, "¡El nombre del campo no es valido!");
         } else {
+            array_nombres_campos.add(nombre_campo);
             String linea = crear_campo(nombre_campo);
             escribir_archivo(linea);
             JOptionPane.showMessageDialog(this, "¡Se ha creado el campo exitosamente!");
@@ -965,6 +945,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             SP_TamañoMaximo.setValue(0);
             RB_LlavePrimariaNo.setSelected(true);
         }//fin else validar nombre campo
+        Cargado_ComboBox();
     }//GEN-LAST:event_btn_crear_campoActionPerformed
 
     private void BTN_RegresarCrearCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_RegresarCrearCamposActionPerformed
@@ -991,8 +972,10 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         try {
             int pos_campo = CB_ModificarCampo.getSelectedIndex();
             String nombre_campo = TF_ModificarCampoNombre.getText();
-            if (!validar_nombre_campo(nombre_campo)) {//si el nombre no es valido
-                JOptionPane.showMessageDialog(this, "El nombre del campo no es válido.");
+            if (nombre_campo.equals("")) {
+                JOptionPane.showMessageDialog(this, "¡Ha dejado el nombre del campo en blanco!");
+            } else if (validar_nombre_campo(nombre_campo) == false) {
+                JOptionPane.showMessageDialog(this, "¡El nombre del campo no es valido!");
             } else {
                 String modificacion = crear_campo(nombre_campo);//agarro el campo formateado en cadena
                 String campos_originales = "";//servira para agarrar todos los campos
@@ -1024,6 +1007,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                         = campos_originales.replaceAll(campo_seleccionado, modificacion.substring(0, modificacion.length() - 2));
                 actualizar_archivo(campos_modificados);
                 JOptionPane.showMessageDialog(this, "¡Se ha modificado el campo con exito!");
+                Cargado_ComboBox();
             }//fin if
         } catch (Exception e) {
             System.out.println("stracktrace");
@@ -1035,6 +1019,11 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
         actualizar_gui_modificar();
     }//GEN-LAST:event_CB_ModificarCampoItemStateChanged
+
+    private void btn_borrar_camposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrar_camposActionPerformed
+        // TODO add your handling code here:
+        Cargado_ComboBox();
+    }//GEN-LAST:event_btn_borrar_camposActionPerformed
 
     void actualizar_gui_modificar() {
         int pos_campo = CB_ModificarCampo.getSelectedIndex();
@@ -1196,9 +1185,13 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     }
 
     boolean validar_nombre_campo(String nombre_campo) {// *validar que no esté vacio*
-        
+        for (int i = 0; i < array_nombres_campos.size(); i++) {
+            if (nombre_campo.equals(array_nombres_campos.get(i))) {
+                return false;
+            } // Fin If
+        } // Fin For
         return true;
-    }
+    } // Fin Validar Nombre Campo
 
     void escribir_archivo(String linea) {
         // Forma de Escribir:
@@ -1244,6 +1237,38 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         } catch (IOException ex) {
             ex.printStackTrace();
         }//fin try catch
+    }
+
+    void Cargado_ComboBox() {
+        FileReader fr = null;
+        BufferedReader br = null;
+        try {
+            fr = new FileReader(archivo_actual);
+            br = new BufferedReader(fr);
+            String linea = "";
+            String[] lista_campos;
+            DefaultComboBoxModel modelo = (DefaultComboBoxModel) CB_ModificarCampo.getModel();
+            DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) CB_BorrarCampos.getModel();
+            //modelo.addElement("Seleccione: ");
+            //CB_ModificarCampo.setModel(modelo);
+            while ((linea = br.readLine()) != null) {
+                lista_campos = linea.split("&");
+                for (int i = 0; i < lista_campos.length; i++) {
+                    modelo.addElement(lista_campos[i]);
+                    modelo2.addElement(lista_campos[i]);
+                    CB_ModificarCampo.setModel(modelo);
+                    CB_BorrarCampos.setModel(modelo2);
+                } // Fin For
+            } // Fin While
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Fin Try Catch
+        try {
+            br.close();
+            fr.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } // Fin Try Catch
     }
 
     /**
@@ -1341,6 +1366,6 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private java.awt.Button jb_salir;
     private javax.swing.JButton jb_salirdemenucampos;
     // End of variables declaration//GEN-END:variables
-
     private File archivo_actual;
+    ArrayList<String> array_nombres_campos = new ArrayList();
 }
