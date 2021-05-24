@@ -215,7 +215,7 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                      <Component id="jButton1" min="-2" pref="95" max="-2" attributes="0"/>
+                                      <Component id="btn_crear_campo" min="-2" pref="95" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
@@ -265,7 +265,7 @@
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="btn_crear_campo" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace pref="38" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="BTN_Regresar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -315,18 +315,27 @@
             </Component>
             <Component class="javax.swing.JRadioButton" name="RB_LlavePrimariaSi">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="btng_llave"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="SI"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JRadioButton" name="RB_LlavePrimariaNo">
               <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="btng_llave"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="NO"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btn_crear_campo">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Crear Campo"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_crear_campoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
@@ -672,6 +681,8 @@
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.ButtonGroup" name="btng_llave">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -700,9 +711,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="289" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jb_abrrarchivo" min="-2" max="-2" attributes="0"/>
+                  <Component id="jb_abrir_archivo" min="-2" max="-2" attributes="0"/>
                   <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                      <Component id="jb_nuevoarchvo" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jb_nuevo_archivo" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jb_salir" min="-2" max="-2" attributes="0"/>
@@ -717,9 +728,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-              <Component id="jb_nuevoarchvo" min="-2" max="-2" attributes="0"/>
+              <Component id="jb_nuevo_archivo" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jb_abrrarchivo" min="-2" max="-2" attributes="0"/>
+              <Component id="jb_abrir_archivo" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
               <Component id="jb_salir" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="234" max="32767" attributes="0"/>
@@ -728,21 +739,21 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="java.awt.Button" name="jb_nuevoarchvo">
+    <Component class="java.awt.Button" name="jb_nuevo_archivo">
       <Properties>
         <Property name="label" type="java.lang.String" value="Nuevo Archivo"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_nuevoarchvoMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_nuevoarchvoActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_nuevo_archivoMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jb_nuevo_archivoActionPerformed"/>
       </Events>
     </Component>
-    <Component class="java.awt.Button" name="jb_abrrarchivo">
+    <Component class="java.awt.Button" name="jb_abrir_archivo">
       <Properties>
         <Property name="label" type="java.lang.String" value="Abrir Archivo"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_abrrarchivoMouseClicked"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jb_abrir_archivoMouseClicked"/>
       </Events>
     </Component>
     <Component class="java.awt.Button" name="jb_salir">

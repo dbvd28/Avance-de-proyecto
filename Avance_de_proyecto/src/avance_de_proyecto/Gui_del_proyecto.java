@@ -10,6 +10,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -58,7 +61,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         CB_TipoDeDato = new javax.swing.JComboBox<>();
         RB_LlavePrimariaSi = new javax.swing.JRadioButton();
         RB_LlavePrimariaNo = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
+        btn_crear_campo = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -86,8 +89,9 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jButton2 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jb_nuevoarchvo = new java.awt.Button();
-        jb_abrrarchivo = new java.awt.Button();
+        btng_llave = new javax.swing.ButtonGroup();
+        jb_nuevo_archivo = new java.awt.Button();
+        jb_abrir_archivo = new java.awt.Button();
         jb_salir = new java.awt.Button();
 
         jb_cerrararchivo.setText("Cerrar Archivo");
@@ -218,11 +222,18 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
         CB_TipoDeDato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "int", "byte", "short", "double", "float", "long", "char", "string", "boolean" }));
 
+        btng_llave.add(RB_LlavePrimariaSi);
         RB_LlavePrimariaSi.setText("SI");
 
+        btng_llave.add(RB_LlavePrimariaNo);
         RB_LlavePrimariaNo.setText("NO");
 
-        jButton1.setText("Crear Campo");
+        btn_crear_campo.setText("Crear Campo");
+        btn_crear_campo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_crear_campoActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Nombre");
 
@@ -265,7 +276,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                                 .addComponent(jLabel5))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_crear_camposLayout.createSequentialGroup()
                                 .addGap(39, 39, 39)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btn_crear_campo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(38, 38, 38)
                         .addGroup(jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(RB_LlavePrimariaNo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -303,7 +314,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                     .addComponent(RB_LlavePrimariaNo)
                     .addComponent(jLabel7))
                 .addGap(33, 33, 33)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_crear_campo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BTN_Regresar)
@@ -499,22 +510,22 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         setTitle("principal");
         setName("principal"); // NOI18N
 
-        jb_nuevoarchvo.setLabel("Nuevo Archivo");
-        jb_nuevoarchvo.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_nuevo_archivo.setLabel("Nuevo Archivo");
+        jb_nuevo_archivo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_nuevoarchvoMouseClicked(evt);
+                jb_nuevo_archivoMouseClicked(evt);
             }
         });
-        jb_nuevoarchvo.addActionListener(new java.awt.event.ActionListener() {
+        jb_nuevo_archivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jb_nuevoarchvoActionPerformed(evt);
+                jb_nuevo_archivoActionPerformed(evt);
             }
         });
 
-        jb_abrrarchivo.setLabel("Abrir Archivo");
-        jb_abrrarchivo.addMouseListener(new java.awt.event.MouseAdapter() {
+        jb_abrir_archivo.setLabel("Abrir Archivo");
+        jb_abrir_archivo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jb_abrrarchivoMouseClicked(evt);
+                jb_abrir_archivoMouseClicked(evt);
             }
         });
 
@@ -532,9 +543,9 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(289, 289, 289)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jb_abrrarchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jb_abrir_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jb_nuevoarchvo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jb_nuevo_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(26, 26, 26)
                             .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -544,9 +555,9 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(142, 142, 142)
-                .addComponent(jb_nuevoarchvo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_nuevo_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jb_abrrarchivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jb_abrir_archivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addComponent(jb_salir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(234, Short.MAX_VALUE))
@@ -555,9 +566,9 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jb_nuevoarchvoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_nuevoarchvoActionPerformed
+    private void jb_nuevo_archivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_nuevo_archivoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jb_nuevoarchvoActionPerformed
+    }//GEN-LAST:event_jb_nuevo_archivoActionPerformed
 
     private void jb_salirdemenucamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_salirdemenucamposActionPerformed
         // TODO add your handling code here:
@@ -565,6 +576,10 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
     private void BTN_BorrarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BorrarCamposActionPerformed
         // TODO add your handling code here:
+        JD_BorrarCampos.setModal(true);
+        JD_BorrarCampos.pack();
+        JD_BorrarCampos.setLocationRelativeTo(this);
+        JD_BorrarCampos.setVisible(true);
     }//GEN-LAST:event_BTN_BorrarCamposActionPerformed
 
     private void jb_salirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirMouseClicked
@@ -572,7 +587,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jb_salirMouseClicked
 
-    private void jb_nuevoarchvoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_nuevoarchvoMouseClicked
+    private void jb_nuevo_archivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_nuevo_archivoMouseClicked
         // TODO add your handling code here:
         JFileChooser guardarcomo = new JFileChooser();
         guardarcomo.setApproveButtonText("Guardar");
@@ -580,15 +595,17 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         File archivo = new File(guardarcomo.getSelectedFile() + ".txt");
         try {
             BufferedWriter salida = new BufferedWriter(new FileWriter(archivo));
-            salida.write("Prueba a ver s abre esta mierda");
+            //salida.write("Prueba a ver si abre");
             salida.close();
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_jb_nuevoarchvoMouseClicked
+    }//GEN-LAST:event_jb_nuevo_archivoMouseClicked
 
-    private void jb_abrrarchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_abrrarchivoMouseClicked
+    private void jb_abrir_archivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_abrir_archivoMouseClicked
         // TODO add your handling code here:
-        fichero = null;//Este fichero esta definido como una variable global en la linea 370 debido que ocupo mantener el archivo para guardar
+        /*Este archivo_actual esta definido como una variable global en la linea 370 debido que ocupo 
+        mantener el archivo para guardar*/
+        archivo_actual = null;
         FileReader fr = null;
         BufferedReader br = null;
         jTextArea2.setText("");
@@ -600,8 +617,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             filechooser.addChoosableFileFilter(filtro2);
             int seleccion = filechooser.showOpenDialog(null);
             if (seleccion == JFileChooser.APPROVE_OPTION) {
-                fichero = filechooser.getSelectedFile();
-                fr = new FileReader(fichero);
+                archivo_actual = filechooser.getSelectedFile();
+                fr = new FileReader(archivo_actual);
                 br = new BufferedReader(fr);
                 String linea;
                 jTextArea2.setText("");
@@ -622,14 +639,14 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         jd_archivo.pack();
         jd_archivo.setLocationRelativeTo(null);
         jd_archivo.setVisible(true);
-    }//GEN-LAST:event_jb_abrrarchivoMouseClicked
+    }//GEN-LAST:event_jb_abrir_archivoMouseClicked
 
     private void jb_guardararchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardararchivoMouseClicked
         // TODO add your handling code here:
         FileWriter fw = null;
         BufferedWriter bw = null;
         try {
-            fw = new FileWriter(fichero);
+            fw = new FileWriter(archivo_actual);
             bw = new BufferedWriter(fw);
             bw.write(jTextArea2.getText());
             jTextArea2.setText(jTextArea2.getText());
@@ -655,7 +672,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 FileWriter fw = null;
                 BufferedWriter bw = null;
                 try {
-                    fw = new FileWriter(fichero);
+                    fw = new FileWriter(archivo_actual);
                     bw = new BufferedWriter(fw);
                     bw.write(jTextArea2.getText());
                     jTextArea2.setText("");
@@ -687,7 +704,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 FileWriter fw = null;
                 BufferedWriter bw = null;
                 try {
-                    fw = new FileWriter(fichero);
+                    fw = new FileWriter(archivo_actual);
                     bw = new BufferedWriter(fw);
                     bw.write(jTextArea2.getText());
                     jTextArea2.setText("");
@@ -713,15 +730,100 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
     private void BTN_CrearCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_CrearCamposActionPerformed
         // TODO add your handling code here:
+        JD_CrearCampos.setModal(true);
+        JD_CrearCampos.pack();
+        JD_CrearCampos.setLocationRelativeTo(this);
+        JD_CrearCampos.setVisible(true);
     }//GEN-LAST:event_BTN_CrearCamposActionPerformed
 
     private void BTN_ModificarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ModificarCamposActionPerformed
         // TODO add your handling code here:
+        JD_ModificarCampos.setModal(true);
+        JD_ModificarCampos.pack();
+        JD_ModificarCampos.setLocationRelativeTo(this);
+        JD_ModificarCampos.setVisible(true);
     }//GEN-LAST:event_BTN_ModificarCamposActionPerformed
 
     private void BTN_ListarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ListarCamposActionPerformed
         // TODO add your handling code here:
+        JD_ListarCampos.setModal(true);
+        JD_ListarCampos.pack();
+        JD_ListarCampos.setLocationRelativeTo(this);
+        JD_ListarCampos.setVisible(true);
     }//GEN-LAST:event_BTN_ListarCamposActionPerformed
+
+    private void btn_crear_campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crear_campoActionPerformed
+        // TODO add your handling code here:
+        /*
+        int -> 0
+        byte -> 1
+        short -> 2
+        double -> 3
+        float -> 4
+        long -> 5
+        char -> 6
+        String -> 7
+        boolean -> 8
+         */
+        String nombre_campo = TF_NombreCampo.getText();
+        if (!validar_nombre_campo()) {//si el nombre no es valido
+            JOptionPane.showMessageDialog(this, "El nombre del campo no es válido.");
+        } else {
+            String tipo_dato = CB_TipoDeDato.getSelectedItem() + "";
+            double longitud_minima = Double.parseDouble(SP_TamañoMinimo.getValue() + ""),
+                    longitud_maxima = Double.parseDouble(SP_TamañoMaximo.getValue() + "");
+            boolean llave_primaria = false;
+            if (RB_LlavePrimariaSi.isSelected()) {
+                llave_primaria = true;
+            }
+            /*
+            F = false
+            T = true
+            */
+            char llave_primaria_siono = 'F';
+            if(llave_primaria){
+                llave_primaria_siono = 'T';
+            }
+            int codigo_tipo_dato = CB_TipoDeDato.getItemCount()-1;
+            String linea
+                    = nombre_campo + "?" + 
+                    (codigo_tipo_dato + "?") + 
+                    (longitud_minima + "?") + 
+                    (longitud_maxima + "?") + 
+                    llave_primaria_siono + "|";
+            escribir_archivo(linea);
+            JOptionPane.showMessageDialog(this, "¡Se ha creado el campo exitosamente!");
+            //this.setVisible(false);
+        }//fin else validar nombre campo
+    }//GEN-LAST:event_btn_crear_campoActionPerformed
+
+    boolean validar_nombre_campo() {// *validar que no esté vacio*
+
+        return true;
+    }
+
+    void escribir_archivo(String linea) {
+        // Forma de Escribir:
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        try {
+            //archivo = new File("./salida.txt");
+            //fw = new FileWriter(archivo_actual); // Sobreescribe 
+            fw = new FileWriter(archivo_actual, true); // Respeta el contenido
+            bw = new BufferedWriter(fw);
+            bw.write(linea);
+            //bw.newLine(); ocupamos que escriba derecho para evitar fragmentacion, por eso la comentamos
+            bw.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Fin Try Catch
+        try {
+            bw.close();
+            fw.close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -734,7 +836,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows Classic".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -781,8 +883,9 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JButton btn_cerrar_borrar_campos;
     private javax.swing.JButton btn_cerrar_listar_campos;
     private javax.swing.JButton btn_cerrar_modificar_campos;
+    private javax.swing.JButton btn_crear_campo;
     private javax.swing.JButton btn_listar_campos_desde_modificar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.ButtonGroup btng_llave;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -804,13 +907,14 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private java.awt.Button jb_abrrarchivo;
+    private java.awt.Button jb_abrir_archivo;
     private javax.swing.JButton jb_cerrararchivo;
     private javax.swing.JButton jb_guardararchivo;
-    private java.awt.Button jb_nuevoarchvo;
+    private java.awt.Button jb_nuevo_archivo;
     private java.awt.Button jb_salir;
     private javax.swing.JButton jb_salirdemenucampos;
     private javax.swing.JDialog jd_archivo;
     // End of variables declaration//GEN-END:variables
-private File fichero;
+
+    private File archivo_actual;
 }
