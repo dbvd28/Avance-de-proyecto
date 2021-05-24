@@ -40,7 +40,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jd_archivo = new javax.swing.JDialog();
+        JD_MenuCampos = new javax.swing.JDialog();
         jb_cerrararchivo = new javax.swing.JButton();
         jb_salirdemenucampos = new javax.swing.JButton();
         BTN_CrearCampos = new javax.swing.JButton();
@@ -54,7 +54,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         JD_CrearCampos = new javax.swing.JDialog();
         jP_crear_campos = new javax.swing.JPanel();
         btn_cancelar_crear_campos = new javax.swing.JButton();
-        BTN_Regresar = new javax.swing.JButton();
+        BTN_RegresarCrearCampos = new javax.swing.JButton();
         TF_NombreCampo = new javax.swing.JTextField();
         SP_TamañoMinimo = new javax.swing.JSpinner();
         SP_TamañoMaximo = new javax.swing.JSpinner();
@@ -78,9 +78,9 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         JD_ListarCampos = new javax.swing.JDialog();
         jP_listar_campos = new javax.swing.JPanel();
-        btn_cerrar_listar_campos = new javax.swing.JButton();
+        BTN_RegresarListarCampos = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        TA_ListarCampos = new javax.swing.JTextArea();
         JD_BorrarCampos = new javax.swing.JDialog();
         jP_borrar_campos = new javax.swing.JPanel();
         btn_borrar_campos = new javax.swing.JButton();
@@ -154,41 +154,41 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jScrollPane1.setViewportView(jTextArea2);
 
-        javax.swing.GroupLayout jd_archivoLayout = new javax.swing.GroupLayout(jd_archivo.getContentPane());
-        jd_archivo.getContentPane().setLayout(jd_archivoLayout);
-        jd_archivoLayout.setHorizontalGroup(
-            jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_archivoLayout.createSequentialGroup()
-                .addGroup(jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_archivoLayout.createSequentialGroup()
+        javax.swing.GroupLayout JD_MenuCamposLayout = new javax.swing.GroupLayout(JD_MenuCampos.getContentPane());
+        JD_MenuCampos.getContentPane().setLayout(JD_MenuCamposLayout);
+        JD_MenuCamposLayout.setHorizontalGroup(
+            JD_MenuCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_MenuCamposLayout.createSequentialGroup()
+                .addGroup(JD_MenuCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JD_MenuCamposLayout.createSequentialGroup()
                         .addGap(200, 200, 200)
                         .addComponent(jb_salirdemenucampos))
-                    .addGroup(jd_archivoLayout.createSequentialGroup()
+                    .addGroup(JD_MenuCamposLayout.createSequentialGroup()
                         .addGap(411, 411, 411)
-                        .addGroup(jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(JD_MenuCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BTN_CrearCampos, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(JD_MenuCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jb_guardararchivo)
                                 .addComponent(jb_cerrararchivo)
                                 .addComponent(BTN_ModificarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jd_archivoLayout.createSequentialGroup()
+                                .addGroup(JD_MenuCamposLayout.createSequentialGroup()
                                     .addGap(14, 14, 14)
                                     .addComponent(jLabel1))
                                 .addComponent(BTN_ListarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(BTN_BorrarCampos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap(60, Short.MAX_VALUE))
-            .addGroup(jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_archivoLayout.createSequentialGroup()
+            .addGroup(JD_MenuCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JD_MenuCamposLayout.createSequentialGroup()
                     .addContainerGap(23, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(211, Short.MAX_VALUE)))
         );
-        jd_archivoLayout.setVerticalGroup(
-            jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_archivoLayout.createSequentialGroup()
+        JD_MenuCamposLayout.setVerticalGroup(
+            JD_MenuCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JD_MenuCamposLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jd_archivoLayout.createSequentialGroup()
+                .addGroup(JD_MenuCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JD_MenuCamposLayout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
                         .addComponent(BTN_CrearCampos)
@@ -203,12 +203,12 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jb_cerrararchivo)
                         .addGap(64, 64, 64))
-                    .addGroup(jd_archivoLayout.createSequentialGroup()
+                    .addGroup(JD_MenuCamposLayout.createSequentialGroup()
                         .addGap(299, 299, 299)
                         .addComponent(jb_salirdemenucampos)
                         .addContainerGap(28, Short.MAX_VALUE))))
-            .addGroup(jd_archivoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_archivoLayout.createSequentialGroup()
+            .addGroup(JD_MenuCamposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JD_MenuCamposLayout.createSequentialGroup()
                     .addContainerGap(31, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(141, Short.MAX_VALUE)))
@@ -218,7 +218,12 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
         btn_cancelar_crear_campos.setText("Cancelar");
 
-        BTN_Regresar.setText("Regresar");
+        BTN_RegresarCrearCampos.setText("Regresar");
+        BTN_RegresarCrearCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_RegresarCrearCamposActionPerformed(evt);
+            }
+        });
 
         CB_TipoDeDato.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "int", "byte", "short", "double", "float", "long", "char", "string", "boolean" }));
 
@@ -285,7 +290,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addGap(0, 56, Short.MAX_VALUE))
                     .addGroup(jP_crear_camposLayout.createSequentialGroup()
-                        .addComponent(BTN_Regresar)
+                        .addComponent(BTN_RegresarCrearCampos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btn_cancelar_crear_campos)))
                 .addContainerGap())
@@ -317,7 +322,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 .addComponent(btn_crear_campo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jP_crear_camposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BTN_Regresar)
+                    .addComponent(BTN_RegresarCrearCampos)
                     .addComponent(btn_cancelar_crear_campos))
                 .addContainerGap())
         );
@@ -399,11 +404,16 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
         jP_listar_campos.setBackground(new java.awt.Color(255, 255, 255));
 
-        btn_cerrar_listar_campos.setText("Regresar");
+        BTN_RegresarListarCampos.setText("Regresar");
+        BTN_RegresarListarCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BTN_RegresarListarCamposActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        TA_ListarCampos.setColumns(20);
+        TA_ListarCampos.setRows(5);
+        jScrollPane2.setViewportView(TA_ListarCampos);
 
         javax.swing.GroupLayout jP_listar_camposLayout = new javax.swing.GroupLayout(jP_listar_campos);
         jP_listar_campos.setLayout(jP_listar_camposLayout);
@@ -415,7 +425,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 .addContainerGap(52, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_listar_camposLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_cerrar_listar_campos)
+                .addComponent(BTN_RegresarListarCampos)
                 .addGap(200, 200, 200))
         );
         jP_listar_camposLayout.setVerticalGroup(
@@ -424,7 +434,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(btn_cerrar_listar_campos)
+                .addComponent(BTN_RegresarListarCampos)
                 .addContainerGap())
         );
 
@@ -576,6 +586,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
     private void BTN_BorrarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_BorrarCamposActionPerformed
         // TODO add your handling code here:
+        JD_MenuCampos.setVisible(false);
         JD_BorrarCampos.setModal(true);
         JD_BorrarCampos.pack();
         JD_BorrarCampos.setLocationRelativeTo(this);
@@ -605,6 +616,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
         /*Este archivo_actual esta definido como una variable global en la linea 370 debido que ocupo 
         mantener el archivo para guardar*/
+        this.setVisible(false);
         archivo_actual = null;
         FileReader fr = null;
         BufferedReader br = null;
@@ -636,9 +648,9 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        jd_archivo.pack();
-        jd_archivo.setLocationRelativeTo(null);
-        jd_archivo.setVisible(true);
+        JD_MenuCampos.pack();
+        JD_MenuCampos.setLocationRelativeTo(null);
+        JD_MenuCampos.setVisible(true);
     }//GEN-LAST:event_jb_abrir_archivoMouseClicked
 
     private void jb_guardararchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardararchivoMouseClicked
@@ -651,8 +663,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             jTextArea2.setText("");
             String linea;
             while ((linea = br.readLine()) != null) {
-                    jTextArea2.append(linea);
-                }
+                jTextArea2.append(linea);
+            }
             JOptionPane.showMessageDialog(null, "Archivo Guardado Exitosamente");
         } catch (Exception e) {
             e.printStackTrace();
@@ -667,7 +679,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
     private void jb_salirdemenucamposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirdemenucamposMouseClicked
         // TODO add your handling code here:
-        jd_archivo.setVisible(false);
+        JD_MenuCampos.setVisible(false);
+        this.setVisible(true);
         /*String opcion_deguardado = JOptionPane.showInputDialog(null, "Desea guardarlo (SI o NO)?");//Este string solo se utiliza para saber si lo quiere guardar antes de cerrar el archivo
         if (opcion_deguardado.equals("SI") || opcion_deguardado.equals("Si") || opcion_deguardado.equals("si") || opcion_deguardado.equals("NO") || opcion_deguardado.equals("No") || opcion_deguardado.equals("no")) {
             if (opcion_deguardado.equals("SI") || opcion_deguardado.equals("Si") || opcion_deguardado.equals("si")) {
@@ -715,27 +728,28 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                     jTextArea2.setText("");
                     bw.flush();
                     JOptionPane.showMessageDialog(this, "Archivo Guardado Exitosamente");
-                    archivo_actual=null;
+                    archivo_actual = null;
                 } catch (Exception e) {
                     e.printStackTrace();
-                }
+                } // Fin Try Catch
                 try {
                     bw.close();
                     fw.close();
                 } catch (Exception e) {
                     e.printStackTrace();
-                }
-                jd_archivo.setVisible(false);
+                } // Fin Try Catch
+                JD_MenuCampos.setVisible(false);
             } else {
-                jd_archivo.setVisible(false);
+                JD_MenuCampos.setVisible(false);
             }
         } else {
-            jd_archivo.setVisible(false);
+            JD_MenuCampos.setVisible(false);
         }
     }//GEN-LAST:event_jb_cerrararchivoMouseClicked
 
     private void BTN_CrearCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_CrearCamposActionPerformed
         // TODO add your handling code here:
+        JD_MenuCampos.setVisible(false);
         JD_CrearCampos.setModal(true);
         JD_CrearCampos.pack();
         JD_CrearCampos.setLocationRelativeTo(this);
@@ -744,6 +758,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
     private void BTN_ModificarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ModificarCamposActionPerformed
         // TODO add your handling code here:
+        JD_MenuCampos.setVisible(false);
         JD_ModificarCampos.setModal(true);
         JD_ModificarCampos.pack();
         JD_ModificarCampos.setLocationRelativeTo(this);
@@ -752,10 +767,33 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
     private void BTN_ListarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_ListarCamposActionPerformed
         // TODO add your handling code here:
-        JD_ListarCampos.setModal(true);
-        JD_ListarCampos.pack();
-        JD_ListarCampos.setLocationRelativeTo(this);
-        JD_ListarCampos.setVisible(true);
+        try {
+            TA_ListarCampos.setText("");
+            FileReader fr = null;
+            BufferedReader br = null;
+            try {
+                fr = new FileReader(archivo_actual);
+                br = new BufferedReader(fr);
+                String linea = "";
+                String[] lista_campos;
+                while ((linea = br.readLine()) != null) {
+                    lista_campos = linea.split("-");
+                    TA_ListarCampos.append(lista_campos[0]);
+                    TA_ListarCampos.append("\n");
+                } // Fin While
+            } catch (Exception e) {
+                e.printStackTrace();
+            } // Fin Try Catch
+            br.close();
+            fr.close();
+            JD_MenuCampos.setVisible(false);
+            JD_ListarCampos.setModal(true);
+            JD_ListarCampos.pack();
+            JD_ListarCampos.setLocationRelativeTo(this);
+            JD_ListarCampos.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } // Fin Try Catch
     }//GEN-LAST:event_BTN_ListarCamposActionPerformed
 
     private void btn_crear_campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crear_campoActionPerformed
@@ -791,17 +829,33 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 llave_primaria_siono = 'T';
             }
             int codigo_tipo_dato = CB_TipoDeDato.getItemCount() - 1;
-             String linea
+            String linea
                     = nombre_campo + "?"
                     + (codigo_tipo_dato + "?")
                     + (longitud_minima + "?")
                     + (longitud_maxima + "?")
-                    + llave_primaria_siono + "|";
+                    + llave_primaria_siono + "-";
             escribir_archivo(linea);
             JOptionPane.showMessageDialog(this, "¡Se ha creado el campo exitosamente!");
-            //this.setVisible(false);
+            TF_NombreCampo.setText("");
+            CB_TipoDeDato.setSelectedIndex(0);
+            SP_TamañoMinimo.setValue(0);
+            SP_TamañoMaximo.setValue(0);
+            RB_LlavePrimariaNo.setSelected(true);
         }//fin else validar nombre campo
     }//GEN-LAST:event_btn_crear_campoActionPerformed
+
+    private void BTN_RegresarCrearCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_RegresarCrearCamposActionPerformed
+        // TODO add your handling code here:
+        JD_CrearCampos.setVisible(false);
+        JD_MenuCampos.setVisible(true);
+    }//GEN-LAST:event_BTN_RegresarCrearCamposActionPerformed
+
+    private void BTN_RegresarListarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BTN_RegresarListarCamposActionPerformed
+        // TODO add your handling code here:
+        JD_ListarCampos.setVisible(false);
+        JD_MenuCampos.setVisible(true);
+    }//GEN-LAST:event_BTN_RegresarListarCamposActionPerformed
 
     boolean validar_nombre_campo() {// *validar que no esté vacio*
 
@@ -871,23 +925,25 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JButton BTN_CrearCampos;
     private javax.swing.JButton BTN_ListarCampos;
     private javax.swing.JButton BTN_ModificarCampos;
-    private javax.swing.JButton BTN_Regresar;
+    private javax.swing.JButton BTN_RegresarCrearCampos;
+    private javax.swing.JButton BTN_RegresarListarCampos;
     private javax.swing.JComboBox<String> CB_TipoDeDato;
     private javax.swing.JDialog JD_BorrarCampos;
     private javax.swing.JDialog JD_CrearCampos;
     private javax.swing.JDialog JD_ListarCampos;
+    private javax.swing.JDialog JD_MenuCampos;
     private javax.swing.JDialog JD_ModificarCampos;
     private javax.swing.JRadioButton RB_LlavePrimariaNo;
     private javax.swing.JRadioButton RB_LlavePrimariaSi;
     private javax.swing.JSpinner SP_TamañoMaximo;
     private javax.swing.JSpinner SP_TamañoMinimo;
+    private javax.swing.JTextArea TA_ListarCampos;
     private javax.swing.JTextField TF_NombreCampo;
     private javax.swing.JButton btn_borrar_campos;
     private javax.swing.JButton btn_cancelar_borrar_campos;
     private javax.swing.JButton btn_cancelar_crear_campos;
     private javax.swing.JButton btn_cancelar_modificar_campos;
     private javax.swing.JButton btn_cerrar_borrar_campos;
-    private javax.swing.JButton btn_cerrar_listar_campos;
     private javax.swing.JButton btn_cerrar_modificar_campos;
     private javax.swing.JButton btn_crear_campo;
     private javax.swing.JButton btn_listar_campos_desde_modificar;
@@ -909,7 +965,6 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private javax.swing.JPanel jP_modificar_campos;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
@@ -919,7 +974,6 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private java.awt.Button jb_nuevo_archivo;
     private java.awt.Button jb_salir;
     private javax.swing.JButton jb_salirdemenucampos;
-    private javax.swing.JDialog jd_archivo;
     // End of variables declaration//GEN-END:variables
 
     private File archivo_actual;

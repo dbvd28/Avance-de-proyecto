@@ -2,7 +2,7 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Container class="javax.swing.JDialog" name="jd_archivo">
+    <Container class="javax.swing.JDialog" name="JD_MenuCampos">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -228,7 +228,7 @@
                               <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="BTN_Regresar" min="-2" max="-2" attributes="0"/>
+                              <Component id="BTN_RegresarCrearCampos" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btn_cancelar_crear_campos" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -268,7 +268,7 @@
                       <Component id="btn_crear_campo" min="-2" pref="31" max="-2" attributes="0"/>
                       <EmptySpace pref="38" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="BTN_Regresar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="BTN_RegresarCrearCampos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btn_cancelar_crear_campos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -282,10 +282,13 @@
                 <Property name="text" type="java.lang.String" value="Cancelar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="BTN_Regresar">
+            <Component class="javax.swing.JButton" name="BTN_RegresarCrearCampos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Regresar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTN_RegresarCrearCamposActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="TF_NombreCampo">
             </Component>
@@ -519,7 +522,7 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btn_cerrar_listar_campos" min="-2" max="-2" attributes="0"/>
+                      <Component id="BTN_RegresarListarCampos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -530,17 +533,20 @@
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="274" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="32767" attributes="0"/>
-                      <Component id="btn_cerrar_listar_campos" min="-2" max="-2" attributes="0"/>
+                      <Component id="BTN_RegresarListarCampos" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btn_cerrar_listar_campos">
+            <Component class="javax.swing.JButton" name="BTN_RegresarListarCampos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Regresar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BTN_RegresarListarCamposActionPerformed"/>
+              </Events>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <AuxValues>
@@ -549,7 +555,7 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTextArea" name="jTextArea1">
+                <Component class="javax.swing.JTextArea" name="TA_ListarCampos">
                   <Properties>
                     <Property name="columns" type="int" value="20"/>
                     <Property name="rows" type="int" value="5"/>
