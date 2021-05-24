@@ -643,21 +643,23 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
     private void jb_guardararchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardararchivoMouseClicked
         // TODO add your handling code here:
-        FileWriter fw = null;
-        BufferedWriter bw = null;
+        FileReader fr = null;
+        BufferedReader br = null;
         try {
-            fw = new FileWriter(archivo_actual);
-            bw = new BufferedWriter(fw);
-            bw.write(jTextArea2.getText());
-            jTextArea2.setText(jTextArea2.getText());
-            bw.flush();
+            fr = new FileReader(archivo_actual);
+            br = new BufferedReader(fr);
+            jTextArea2.setText("");
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                    jTextArea2.append(linea);
+                }
             JOptionPane.showMessageDialog(null, "Archivo Guardado Exitosamente");
         } catch (Exception e) {
             e.printStackTrace();
         }
         try {
-            bw.close();
-            fw.close();
+            br.close();
+            fr.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -666,17 +668,20 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
     private void jb_salirdemenucamposMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirdemenucamposMouseClicked
         // TODO add your handling code here:
         jd_archivo.setVisible(false);
-        String opcion_deguardado = JOptionPane.showInputDialog(null, "Desea guardarlo (SI o NO)?");//Este string solo se utiliza para saber si lo quiere guardar antes de cerrar el archivo
+        /*String opcion_deguardado = JOptionPane.showInputDialog(null, "Desea guardarlo (SI o NO)?");//Este string solo se utiliza para saber si lo quiere guardar antes de cerrar el archivo
         if (opcion_deguardado.equals("SI") || opcion_deguardado.equals("Si") || opcion_deguardado.equals("si") || opcion_deguardado.equals("NO") || opcion_deguardado.equals("No") || opcion_deguardado.equals("no")) {
             if (opcion_deguardado.equals("SI") || opcion_deguardado.equals("Si") || opcion_deguardado.equals("si")) {
                 FileWriter fw = null;
                 BufferedWriter bw = null;
+                FileReader fr = null;
+                BufferedReader br = null;
                 try {
+                    fr = new FileReader(archivo_actual);
+                    br = new BufferedReader(fr);
                     fw = new FileWriter(archivo_actual);
                     bw = new BufferedWriter(fw);
-                    bw.write(jTextArea2.getText());
-                    jTextArea2.setText("");
-                    bw.flush();
+                     escribir_archivo(linea);
+                    
                     JOptionPane.showMessageDialog(null, "Archivo Guardado Exitosamente");
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -693,7 +698,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             }
         } else {
             jd_archivo.setVisible(false);
-        }
+        }*/
     }//GEN-LAST:event_jb_salirdemenucamposMouseClicked
 
     private void jb_cerrararchivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_cerrararchivoMouseClicked
@@ -710,6 +715,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                     jTextArea2.setText("");
                     bw.flush();
                     JOptionPane.showMessageDialog(this, "Archivo Guardado Exitosamente");
+                    archivo_actual=null;
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -779,18 +785,18 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             /*
             F = false
             T = true
-            */
+             */
             char llave_primaria_siono = 'F';
-            if(llave_primaria){
+            if (llave_primaria) {
                 llave_primaria_siono = 'T';
             }
-            int codigo_tipo_dato = CB_TipoDeDato.getItemCount()-1;
-            String linea
-                    = nombre_campo + "?" + 
-                    (codigo_tipo_dato + "?") + 
-                    (longitud_minima + "?") + 
-                    (longitud_maxima + "?") + 
-                    llave_primaria_siono + "|";
+            int codigo_tipo_dato = CB_TipoDeDato.getItemCount() - 1;
+             String linea
+                    = nombre_campo + "?"
+                    + (codigo_tipo_dato + "?")
+                    + (longitud_minima + "?")
+                    + (longitud_maxima + "?")
+                    + llave_primaria_siono + "|";
             escribir_archivo(linea);
             JOptionPane.showMessageDialog(this, "¡Se ha creado el campo exitosamente!");
             //this.setVisible(false);
