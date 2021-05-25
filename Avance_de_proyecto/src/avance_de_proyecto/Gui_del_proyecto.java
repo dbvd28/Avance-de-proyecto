@@ -897,6 +897,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                         break;
                     case 4:
                         i++;
+                        System.out.println("Campo_actual=" + campo_actual);
+                        System.out.println("i:" + i);
                         if ((campo_actual.charAt(i) + "").equals("T")) {
                             imprimir += "\nLLave: Sí";
                         } else {
@@ -977,7 +979,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             } else if (validar_nombre_campo(nombre_campo) == false) {
                 JOptionPane.showMessageDialog(this, "¡El nombre del campo no es valido!");
             } else {
-                String modificacion = crear_campo(nombre_campo);//agarro el campo formateado en cadena
+                String modificacion = modificar_campo(nombre_campo);//agarro el campo formateado en cadena
                 String campos_originales = "";//servira para agarrar todos los campos
                 // Forma de Escribir:
                 FileReader fr = null;
@@ -1004,7 +1006,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                 System.out.println("campo seleccionado " + campo_seleccionado);
                 System.out.println("modificar -> " + modificacion);
                 String campos_modificados
-                        = campos_originales.replaceAll(campo_seleccionado, modificacion.substring(0, modificacion.length() - 2));
+                        = campos_originales.replaceAll(campo_seleccionado, modificacion.substring(0, modificacion.length() - 1));
                 actualizar_archivo(campos_modificados);
                 JOptionPane.showMessageDialog(this, "¡Se ha modificado el campo con exito!");
                 Cargado_ComboBox();
@@ -1136,6 +1138,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         //System.out.println(CB_TipoDeDato.getSelectedItem().toString());
         double longitud_minima = Double.parseDouble(SP_ModificarMinimo.getValue() + ""),
                 longitud_maxima = Double.parseDouble(SP_ModificarMaximo.getValue() + "");
+        System.out.println(longitud_maxima);
         boolean llave_primaria = false;
         if (RB_ModificarLlaveSi.isSelected()) {
             llave_primaria = true;
@@ -1247,19 +1250,17 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             br = new BufferedReader(fr);
             String linea = "";
             String[] lista_campos;
-            DefaultComboBoxModel modelo = (DefaultComboBoxModel) CB_ModificarCampo.getModel();
-            DefaultComboBoxModel modelo2 = (DefaultComboBoxModel) CB_BorrarCampos.getModel();
-            //modelo.addElement("Seleccione: ");
-            //CB_ModificarCampo.setModel(modelo);
+            DefaultComboBoxModel modelo_modificar = new DefaultComboBoxModel();
+            DefaultComboBoxModel modelo_borrar = new DefaultComboBoxModel();
             while ((linea = br.readLine()) != null) {
                 lista_campos = linea.split("&");
                 for (int i = 0; i < lista_campos.length; i++) {
-                    modelo.addElement(lista_campos[i]);
-                    modelo2.addElement(lista_campos[i]);
-                    CB_ModificarCampo.setModel(modelo);
-                    CB_BorrarCampos.setModel(modelo2);
+                    modelo_modificar.addElement(lista_campos[i]);
+                    modelo_borrar.addElement(lista_campos[i]);
                 } // Fin For
             } // Fin While
+            CB_ModificarCampo.setModel(modelo_modificar);
+            CB_BorrarCampos.setModel(modelo_borrar);
         } catch (Exception e) {
             e.printStackTrace();
         } // Fin Try Catch
