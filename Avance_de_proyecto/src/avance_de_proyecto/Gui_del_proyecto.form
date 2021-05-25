@@ -185,26 +185,18 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="CB_TipoDeDato" alignment="1" max="32767" attributes="0"/>
-                          <Component id="TF_NombreCampo" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                       <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="SP_TamañoMinimo" max="32767" attributes="0"/>
@@ -212,28 +204,31 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="RB_LlavePrimariaNo" max="32767" attributes="0"/>
+                                          <Component id="SP_TamañoMaximo" max="32767" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace pref="40" max="32767" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="BTN_RegresarCrearCampos" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="btn_crear_campo" min="-2" pref="95" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="RB_LlavePrimariaNo" max="32767" attributes="0"/>
-                                  <Component id="SP_TamañoMaximo" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="56" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="BTN_RegresarCrearCampos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btn_cancelar_crear_campos" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="CB_TipoDeDato" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="TF_NombreCampo" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -250,7 +245,7 @@
                           <Component id="CB_TipoDeDato" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="8" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="SP_TamañoMinimo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="SP_TamañoMaximo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -264,12 +259,10 @@
                           <Component id="RB_LlavePrimariaNo" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="btn_crear_campo" min="-2" pref="31" max="-2" attributes="0"/>
-                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <EmptySpace pref="98" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="BTN_RegresarCrearCampos" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_cancelar_crear_campos" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_crear_campo" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -277,11 +270,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btn_cancelar_crear_campos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cancelar"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="BTN_RegresarCrearCampos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Regresar"/>
@@ -407,9 +395,7 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="BTN_RegresarModificarCampos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                              <Component id="btn_cerrar_modificar_campos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
                               <Component id="BTN_Modificar" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="CB_ModificarCampo" min="-2" pref="302" max="-2" attributes="0"/>
@@ -456,7 +442,6 @@
                       </Group>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btn_cerrar_modificar_campos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BTN_RegresarModificarCampos" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="BTN_Modificar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -466,11 +451,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btn_cerrar_modificar_campos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cerrar"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JButton" name="BTN_RegresarModificarCampos">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Regresar"/>
@@ -649,20 +629,13 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btn_cerrar_borrar_campos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="CB_BorrarCampos" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jTextField2" min="-2" pref="151" max="-2" attributes="0"/>
-                              <EmptySpace pref="140" max="32767" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="btn_cancelar_borrar_campos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btn_borrar_campos" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_regresar_borrar_campos" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="180" max="32767" attributes="0"/>
+                              <Component id="btn_borrar_campo" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
@@ -672,53 +645,34 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="83" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                      <EmptySpace pref="146" max="32767" attributes="0"/>
                       <Component id="CB_BorrarCampos" min="-2" pref="29" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btn_cancelar_borrar_campos" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn_borrar_campos" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_regresar_borrar_campos" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn_borrar_campo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                      <Component id="btn_cerrar_borrar_campos" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="btn_borrar_campos">
+            <Component class="javax.swing.JButton" name="btn_borrar_campo">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Borrar Campo(s)"/>
+                <Property name="text" type="java.lang.String" value="Borrar Campo"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_borrar_camposActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_borrar_campoActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="btn_cancelar_borrar_campos">
+            <Component class="javax.swing.JButton" name="btn_regresar_borrar_campos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cancelar"/>
+                <Property name="text" type="java.lang.String" value="Regresar"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="btn_cerrar_borrar_campos">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Cerrar"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField2"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Buscar"/>
-              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_regresar_borrar_camposActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="CB_BorrarCampos">
               <Properties>
