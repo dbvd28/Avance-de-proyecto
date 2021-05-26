@@ -626,11 +626,11 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         /*Este archivo_actual esta definido como una variable global en la linea 370 debido que ocupo 
         mantener el archivo para guardar*/
         this.setVisible(false);
-        archivo_actual = null;
-        FileReader fr = null;
-        BufferedReader br = null;
-        jTextArea2.setText("");
         try {
+            archivo_actual = null;
+            FileReader fr = null;
+            BufferedReader br = null;
+            jTextArea2.setText("");
             JFileChooser filechooser = new JFileChooser("./");
             FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivo de Texto", "txt");
             FileNameExtensionFilter filtro2 = new FileNameExtensionFilter("Imagenes", "jpg", "png", "bmp");
@@ -648,12 +648,13 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                     jTextArea2.append("\n");
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        try {
-            br.close();
-            fr.close();
+            if (br != null) {
+                br.close();
+            }
+            if (fr != null){
+             fr.close();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -814,8 +815,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
 
     void formatear_listado(String campo_actual) {
         //campo_actual += "¡";
-<<<<<<< HEAD
-        String imprimir = "Nombre del Campo: ";
+//<<<<<<< HEAD
+        /*String imprimir = "Nombre del Campo: ";
         int cont = 0;//esta variable sirve para contar por cual campo va
         int num_tipo_dato = 0;
         for (int i = 0; i < campo_actual.length(); i++) {
@@ -880,7 +881,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
                         cont = 0;
                         break;
                 }//*/
-            } else if (!(campo_actual.charAt(i) + "").equals("¡")) {
+ /*} else if (!(campo_actual.charAt(i) + "").equals("¡")) {
                 //System.out.println(caracter_actual);
                 imprimir += caracter_actual;
             }//fin else
@@ -888,8 +889,8 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         imprimir += "\n" + "\n";
         System.out.println("");
         System.out.println(imprimir);
-        TA_ListarCampos.append(imprimir);
-=======
+        TA_ListarCampos.append(imprimir);*/
+//=======
         try {
             String imprimir = "Nombre del Campo: ";
             int cont = 0;//esta variable sirve para contar por cual campo va
@@ -967,7 +968,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             System.out.println("error ");
             //e.printStackTrace();
         }
->>>>>>> ba2a2389f8040a7191c2c16e9b4f629b1ba1ece1
+//>>>>>>> ba2a2389f8040a7191c2c16e9b4f629b1ba1ece1
     }//fin método
 
     private void btn_crear_campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crear_campoActionPerformed
@@ -1075,7 +1076,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         actualizar_gui_modificar();
-        
+
     }//GEN-LAST:event_CB_ModificarCampoItemStateChanged
 
     private void btn_borrar_campoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrar_campoActionPerformed
@@ -1351,10 +1352,10 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             br = new BufferedReader(fr);
             String linea = "";
             String[] lista_campos;
-<<<<<<< HEAD
-            DefaultComboBoxModel modelo_modificar = new DefaultComboBoxModel();
-            DefaultComboBoxModel modelo_borrar = new DefaultComboBoxModel();
-=======
+//<<<<<<< HEAD
+            // DefaultComboBoxModel modelo_modificar = new DefaultComboBoxModel();
+            //DefaultComboBoxModel modelo_borrar = new DefaultComboBoxModel();
+//=======
             //DefaultComboBoxModel modelo_modificar = (DefaultComboBoxModel) CB_ModificarCampo.getModel();
             DefaultComboBoxModel modelo_modificar = new DefaultComboBoxModel();
             DefaultComboBoxModel modelo_borrar = new DefaultComboBoxModel();
@@ -1363,7 +1364,7 @@ public class Gui_del_proyecto extends javax.swing.JFrame {
             CB_BorrarCampos.removeAllItems();
             modelo_borrar = (DefaultComboBoxModel) CB_BorrarCampos.getModel();
             modelo_modificar = (DefaultComboBoxModel) CB_ModificarCampo.getModel();
->>>>>>> ba2a2389f8040a7191c2c16e9b4f629b1ba1ece1
+//>>>>>>> ba2a2389f8040a7191c2c16e9b4f629b1ba1ece1
             while ((linea = br.readLine()) != null) {
                 lista_campos = linea.split("&");
                 for (int i = 0; i < lista_campos.length; i++) {
